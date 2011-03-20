@@ -16,7 +16,7 @@
 	
 	<div id="user_nav">  
 	  <% if current_user %>  
-		Vous êtes connecté
+		<%= "Bonjour #{current_user.prenom}"%>
 	    <%#= link_to "Editer mon profil", edit_user_path(current_user) %>  
 	    <%#= link_to "Logout", logout_path %>  
 	  <% else %>  
