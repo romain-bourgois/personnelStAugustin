@@ -13,7 +13,17 @@
 				<%= js add_gritter(flash[name], :image => name, :sticky => true) %>
 	        <%- end -%>  
 	<% end %>
-
+	
+	<div id="user_nav">  
+	  <% if current_user %>  
+		Vous êtes connecté
+	    <%#= link_to "Editer mon profil", edit_user_path(current_user) %>  
+	    <%#= link_to "Logout", logout_path %>  
+	  <% else %>  
+	    <%= link_to "S'inscrire", new_user_path %>  
+		<%= link_to 'Se connecter', new_user_sessions_path %>
+	  <% end %>  
+	</div>
 <%= yield %>
 
 </body>
