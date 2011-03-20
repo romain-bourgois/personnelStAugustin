@@ -1,0 +1,7 @@
+<%= simple_form_for @user do |f| %>
+	<%= f.input :login, :label => 'Votre login' %>
+	<%= f.input :password, :label => 'Mot de passe'  %>
+	<%= f.input :password_confirmation, :label => 'Confirmez votre mot de passe'  %>
+	<%= f.input :email, :label => 'Votre email' %>
+	<%= f.button :submit, 'Sauvegardez' %>
+<% end %>

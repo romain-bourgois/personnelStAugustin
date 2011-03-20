@@ -1,3 +1,4 @@
+<%= link_to 'Pas encore inscrit?', new_user_path %>
 <%= simple_form_for @user_session do |f| %>
 	<%= f.input :login %>
 	<%= f.input :password , :label => 'Mot de passe' %>
