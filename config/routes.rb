@@ -12,8 +12,12 @@ StAugustin::Application.routes.draw do
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
-  resource :user_sessions
-  resources :users
+  resource :user_sessions, :only => [:new, :create]
+  resources :users, :only => [:new, :create]
+  
+  namespace :private do
+    resource :user_sessions, :only => :destroy
+  end
   
   # Sample resource route with options:
   #   resources :products do

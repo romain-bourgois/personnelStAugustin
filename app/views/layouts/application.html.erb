@@ -18,7 +18,7 @@
 	  <% if current_user %>  
 		<%= "Bonjour #{current_user.prenom}"%>
 	    <%#= link_to "Editer mon profil", edit_user_path(current_user) %>  
-	    <%#= link_to "Logout", logout_path %>  
+	    <%= button_to "Se déconnecter", private_user_sessions_path, :method => :delete %>
 	  <% else %>  
 	    <%= link_to "S'inscrire", new_user_path %>  
 		<%= link_to 'Se connecter', new_user_sessions_path %>
