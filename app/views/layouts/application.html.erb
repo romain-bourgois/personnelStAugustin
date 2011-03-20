@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>StAugustin</title>
+  <%= stylesheet_link_tag :all %>
+  <%= javascript_include_tag :defaults %>
+  <%= include_gritter_and_jquery %>
+  <%= csrf_meta_tag %>
+</head>
+<body>
+	<% unless flash.empty? %>
+	    	<%- flash.each do |name, msg| -%>  
+				<%= js add_gritter(flash[name], :image => name, :sticky => true) %>
+	        <%- end -%>  
+	<% end %>
+
+<%= yield %>
+
+</body>
+</html>

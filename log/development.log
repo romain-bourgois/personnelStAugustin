@@ -1,0 +1,3125 @@
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (1.1ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36mSQL (0.9ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+Migrating to CreateUserSessions (20110315234347)
+  [1m[36mSQL (0.3ms)[0m  [1mCREATE TABLE "user_sessions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110315234347')
+Migrating to CreateUsers (20110315234620)
+  [1m[36mSQL (0.2ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110315234620')
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("user_sessions")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("users")[0m
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (2.5ms)[0m  CREATE TABLE "user_sessions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (1.0ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (1.0ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35mSQL (1.1ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20110315234620')[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20110315234347')
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateUserSessions (20110315234347)
+Migrating to CreateUsers (20110315234620)
+Migrating to AddColumsToUsers (20110315234854)
+  [1m[35mSQL (0.0ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.1ms)[0m  [1mALTER TABLE "users" ADD "login" varchar(255) NOT NULL[0m
+SQLite3::SQLException: Cannot add a NOT NULL column with default value NULL: ALTER TABLE "users" ADD "login" varchar(255) NOT NULL
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateUserSessions (20110315234347)
+Migrating to CreateUsers (20110315234620)
+Migrating to AddColumsToUsers (20110315234854)
+  [1m[35mSQL (0.0ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.3ms)[0m  [1mALTER TABLE "users" ADD "login" varchar(255)[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110315234854')
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("user_sessions")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("users")[0m
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to AddColumsToUsers (20110315234854)
+  [1m[35mSQL (0.0ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.3ms)[0m  [1mCREATE TEMPORARY TABLE "altered_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime, "login" varchar(255)) [0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("users")
+  [1m[36mSQL (0.2ms)[0m  [1mDROP TABLE "users"[0m
+  [1m[35mSQL (0.1ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("altered_users")[0m
+  [1m[35mSQL (0.2ms)[0m  DROP TABLE "altered_users"
+  [1m[36mAREL (0.1ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20110315234854'[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("user_sessions")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("users")
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateUserSessions (20110315234347)
+Migrating to CreateUsers (20110315234620)
+Migrating to AddColumsToUsers (20110315234854)
+  [1m[35mSQL (0.0ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.3ms)[0m  [1mALTER TABLE "users" ADD "login" varchar(255)[0m
+  [1m[35mSQL (0.1ms)[0m  ALTER TABLE "users" ADD "email" varchar(255)
+  [1m[36mSQL (0.1ms)[0m  [1mALTER TABLE "users" ADD "crypted_password" varchar(255)[0m
+  [1m[35mSQL (0.1ms)[0m  ALTER TABLE "users" ADD "password_salt" varchar(255)
+  [1m[36mSQL (0.1ms)[0m  [1mALTER TABLE "users" ADD "persistence_token" varchar(255)[0m
+  [1m[35mSQL (0.3ms)[0m  ALTER TABLE "users" ADD "login_count" integer DEFAULT 0
+  [1m[36mSQL (0.2ms)[0m  [1mALTER TABLE "users" ADD "failed_login_count" integer DEFAULT 0[0m
+  [1m[35mSQL (0.2ms)[0m  ALTER TABLE "users" ADD "last_login_at" datetime
+  [1m[36mSQL (0.2ms)[0m  [1mALTER TABLE "users" ADD "last_login_ip" varchar(255)[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110315234854')
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("user_sessions")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("users")[0m
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.0ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (2.6ms)[0m  CREATE TABLE "user_sessions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (1.1ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime, "login" varchar(255), "email" varchar(255), "crypted_password" varchar(255), "password_salt" varchar(255), "persistence_token" varchar(255), "login_count" integer DEFAULT 0, "failed_login_count" integer DEFAULT 0, "last_login_at" datetime, "last_login_ip" varchar(255)) 
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.9ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35mSQL (1.1ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20110315234854')[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20110315234347')
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20110315234620')[0m
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (2.5ms)[0m  CREATE TABLE "user_sessions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (1.1ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime, "login" varchar(255), "email" varchar(255), "crypted_password" varchar(255), "password_salt" varchar(255), "persistence_token" varchar(255), "login_count" integer DEFAULT 0, "failed_login_count" integer DEFAULT 0, "last_login_at" datetime, "last_login_ip" varchar(255)) 
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (1.0ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35mSQL (1.0ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20110315234854')[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20110315234347')
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20110315234620')[0m
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (2.6ms)[0m  CREATE TABLE "user_sessions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (1.2ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime, "login" varchar(255), "email" varchar(255), "crypted_password" varchar(255), "password_salt" varchar(255), "persistence_token" varchar(255), "login_count" integer DEFAULT 0, "failed_login_count" integer DEFAULT 0, "last_login_at" datetime, "last_login_ip" varchar(255)) 
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (1.0ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35mSQL (1.1ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20110315234854')[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20110315234347')
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20110315234620')[0m
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (2.1ms)[0m  CREATE TABLE "user_sessions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (1.0ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime, "login" varchar(255), "email" varchar(255), "crypted_password" varchar(255), "password_salt" varchar(255), "persistence_token" varchar(255), "login_count" integer DEFAULT 0, "failed_login_count" integer DEFAULT 0, "last_login_at" datetime, "last_login_ip" varchar(255)) 
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.9ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35mSQL (0.9ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20110315234854')[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20110315234347')
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20110315234620')[0m
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (2.2ms)[0m  CREATE TABLE "user_sessions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.9ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime, "login" varchar(255), "email" varchar(255), "crypted_password" varchar(255), "password_salt" varchar(255), "persistence_token" varchar(255), "login_count" integer DEFAULT 0, "failed_login_count" integer DEFAULT 0, "last_login_at" datetime, "last_login_ip" varchar(255)) 
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.9ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35mSQL (0.9ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20110315234854')[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20110315234347')
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20110315234620')[0m
+
+
+Started GET "/" for 127.0.0.1 at Wed Mar 16 01:23:28 +0100 2011
+
+ActionController::RoutingError (No route matches "/"):
+  
+
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Mar 17 21:36:21 +0100 2011
+
+
+Started GET "/" for 127.0.0.1 at Thu Mar 17 21:36:21 +0100 2011
+
+ActionController::RoutingError (No route matches "/"):
+  
+
+
+ActionController::RoutingError (No route matches "/"):
+  
+
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Mar 17 21:36:52 +0100 2011
+
+ActionController::RoutingError (uninitialized constant UserSessionController):
+  
+
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Mar 17 21:36:58 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Mar 17 21:37:08 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Mar 17 23:47:27 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (9.6ms)
+Completed   in 13ms
+
+ActionView::Template::Error (undefined method `model_name' for NilClass:Class):
+    1: <%= simple_form_for @user do |f| %>
+    2: 	<%= f.input :login %>
+    3: 	<%= f.input :password %>
+    4: 	<%= f.button :submit %>
+  app/views/user_sessions/new.html.erb:1:in `_app_views_user_sessions_new_html_erb___1886759615_2180109040_0'
+
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.4ms)
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (9.9ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Mar 17 23:47:38 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (0.7ms)
+Completed   in 7ms
+
+ActionView::Template::Error (undefined method `model_name' for NilClass:Class):
+    1: <%= simple_form_for @user_session do |f| %>
+    2: 	<%= f.input :login %>
+    3: 	<%= f.input :password %>
+    4: 	<%= f.button :submit %>
+  app/views/user_sessions/new.html.erb:1:in `_app_views_user_sessions_new_html_erb___1886759615_2179090900_0'
+
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (213.6ms)
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (218.8ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Mar 17 23:48:13 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (0.8ms)
+Completed   in 14ms
+
+ActionView::Template::Error (undefined method `to_key' for #<UserSession: no credentials provided>):
+    1: <%= simple_form_for @user_session do |f| %>
+    2: 	<%= f.input :login %>
+    3: 	<%= f.input :password %>
+    4: 	<%= f.button :submit %>
+  app/views/user_sessions/new.html.erb:1:in `_app_views_user_sessions_new_html_erb___1886759615_2180794660_0'
+
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.7ms)
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.5ms)
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (6.9ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Mar 17 23:56:35 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.5ms)
+Completed   in 18ms
+
+ActionView::Template::Error (undefined method `user_sessions_path' for #<#<Class:0x103cef118>:0x103ced4d0>):
+    1: <%= simple_form_for @user_session do |f| %>
+    2: 	<%= f.input :login %>
+    3: 	<%= f.input :password %>
+    4: 	<%= f.button :submit %>
+  app/views/user_sessions/new.html.erb:1:in `_app_views_user_sessions_new_html_erb___1886759615_2179422980_0'
+
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.7ms)
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.5ms)
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (7.1ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri Mar 18 00:04:50 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 18ms (Views: 8.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri Mar 18 00:05:11 +0100 2011
+  Processing by UserSessionsController#new as HTML
+ERROR: compiling _app_views_user_sessions_new_html_erb___1886759615_2179203140_0 RAISED compile error
+/Users/romainbourgois/Documents/rails/stAugustin/app/views/user_sessions/new.html.erb:4: syntax error, unexpected tSTRING_BEG, expecting ')'
+...r.append= ( f.button :submit 'Se connecter' );@output_buffer...
+                              ^
+Function body:           def _app_views_user_sessions_new_html_erb___1886759615_2179203140_0(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "user_sessions/new";_old_output_buffer = @output_buffer;;@output_buffer = ActionView::OutputBuffer.new;@output_buffer.append=  simple_form_for @user_session do |f| @output_buffer.safe_concat('
+');@output_buffer.safe_concat('	');@output_buffer.append= ( f.input :login );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('	');@output_buffer.append= ( f.input :password );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('	');@output_buffer.append= ( f.button :submit 'Se connecter' );@output_buffer.safe_concat('
+'); end ;@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /Users/romainbourgois/Documents/rails/stAugustin/app/views/user_sessions/new.html.erb:8:in `compile'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_view/template.rb:134:in `render'
+/Users/romainbourgois/.gem/ruby/1.8/gems/activesupport-3.0.5/lib/active_support/notifications.rb:54:in `instrument'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_view/template.rb:127:in `render'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_view/render/rendering.rb:59:in `_render_template'
+/Users/romainbourgois/.gem/ruby/1.8/gems/activesupport-3.0.5/lib/active_support/notifications.rb:52:in `instrument'
+/Users/romainbourgois/.gem/ruby/1.8/gems/activesupport-3.0.5/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Users/romainbourgois/.gem/ruby/1.8/gems/activesupport-3.0.5/lib/active_support/notifications.rb:52:in `instrument'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_view/render/rendering.rb:56:in `_render_template'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_view/render/rendering.rb:26:in `render'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/abstract_controller/rendering.rb:115:in `_render_template'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/abstract_controller/rendering.rb:109:in `render_to_body'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/abstract_controller/rendering.rb:102:in `render_to_string'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/abstract_controller/rendering.rb:93:in `render'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_controller/metal/rendering.rb:17:in `render'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/Users/romainbourgois/.gem/ruby/1.8/gems/activesupport-3.0.5/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Users/romainbourgois/.gem/ruby/1.8/gems/activesupport-3.0.5/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/Users/romainbourgois/.gem/ruby/1.8/gems/activerecord-3.0.5/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/abstract_controller/base.rb:150:in `process_action'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/abstract_controller/callbacks.rb:18:in `process_action'
+/Users/romainbourgois/.gem/ruby/1.8/gems/activesupport-3.0.5/lib/active_support/callbacks.rb:440:in `_run__1703293750__process_action__943997142__callbacks'
+/Users/romainbourgois/.gem/ruby/1.8/gems/activesupport-3.0.5/lib/active_support/callbacks.rb:409:in `send'
+/Users/romainbourgois/.gem/ruby/1.8/gems/activesupport-3.0.5/lib/active_support/callbacks.rb:409:in `_run_process_action_callbacks'
+/Users/romainbourgois/.gem/ruby/1.8/gems/activesupport-3.0.5/lib/active_support/callbacks.rb:93:in `send'
+/Users/romainbourgois/.gem/ruby/1.8/gems/activesupport-3.0.5/lib/active_support/callbacks.rb:93:in `run_callbacks'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+/Users/romainbourgois/.gem/ruby/1.8/gems/activesupport-3.0.5/lib/active_support/notifications.rb:52:in `instrument'
+/Users/romainbourgois/.gem/ruby/1.8/gems/activesupport-3.0.5/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Users/romainbourgois/.gem/ruby/1.8/gems/activesupport-3.0.5/lib/active_support/notifications.rb:52:in `instrument'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/abstract_controller/base.rb:119:in `process'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/abstract_controller/rendering.rb:41:in `process'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_controller/metal.rb:138:in `dispatch'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_controller/metal.rb:178:in `action'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/Users/romainbourgois/.gem/ruby/1.8/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:148:in `call'
+/Users/romainbourgois/.gem/ruby/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:93:in `recognize'
+/Users/romainbourgois/.gem/ruby/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:68:in `optimized_each'
+/Users/romainbourgois/.gem/ruby/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:92:in `recognize'
+/Users/romainbourgois/.gem/ruby/1.8/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:139:in `call'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/routing/route_set.rb:492:in `call'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/head.rb:14:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.2/lib/rack/methodoverride.rb:24:in `call'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/cookies.rb:302:in `call'
+/Users/romainbourgois/.gem/ruby/1.8/gems/activerecord-3.0.5/lib/active_record/query_cache.rb:32:in `call'
+/Users/romainbourgois/.gem/ruby/1.8/gems/activerecord-3.0.5/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/Users/romainbourgois/.gem/ruby/1.8/gems/activerecord-3.0.5/lib/active_record/query_cache.rb:12:in `cache'
+/Users/romainbourgois/.gem/ruby/1.8/gems/activerecord-3.0.5/lib/active_record/query_cache.rb:31:in `call'
+/Users/romainbourgois/.gem/ruby/1.8/gems/activerecord-3.0.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:354:in `call'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/callbacks.rb:46:in `call'
+/Users/romainbourgois/.gem/ruby/1.8/gems/activesupport-3.0.5/lib/active_support/callbacks.rb:415:in `_run_call_callbacks'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.2/lib/rack/sendfile.rb:107:in `call'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.5/lib/rails/rack/logger.rb:13:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.2/lib/rack/runtime.rb:17:in `call'
+/Users/romainbourgois/.gem/ruby/1.8/gems/activesupport-3.0.5/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.2/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.2/lib/rack/lock.rb:11:in `synchronize'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.2/lib/rack/lock.rb:11:in `call'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/static.rb:30:in `call'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.5/lib/rails/application.rb:168:in `call'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.5/lib/rails/application.rb:77:in `send'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.5/lib/rails/application.rb:77:in `method_missing'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/rack/request_handler.rb:96:in `process_request'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/abstract_request_handler.rb:513:in `accept_and_process_next_request'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/abstract_request_handler.rb:274:in `main_loop'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/rack/application_spawner.rb:205:in `start_request_handler'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/rack/application_spawner.rb:170:in `send'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/rack/application_spawner.rb:170:in `handle_spawn_application'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/utils.rb:479:in `safe_fork'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/rack/application_spawner.rb:165:in `handle_spawn_application'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/abstract_server.rb:357:in `__send__'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/abstract_server.rb:180:in `start'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/rack/application_spawner.rb:128:in `start'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/spawn_manager.rb:253:in `spawn_rack_application'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/abstract_server_collection.rb:132:in `lookup_or_add'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/spawn_manager.rb:246:in `spawn_rack_application'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/abstract_server_collection.rb:82:in `synchronize'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/spawn_manager.rb:244:in `spawn_rack_application'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/spawn_manager.rb:137:in `spawn_application'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/spawn_manager.rb:275:in `handle_spawn_application'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/abstract_server.rb:357:in `__send__'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/helper-scripts/passenger-spawn-server:99
+Rendered user_sessions/new.html.erb within layouts/application (0.7ms)
+Completed   in 13ms
+
+ActionView::Template::Error (compile error
+/Users/romainbourgois/Documents/rails/stAugustin/app/views/user_sessions/new.html.erb:4: syntax error, unexpected tSTRING_BEG, expecting ')'
+...r.append= ( f.button :submit 'Se connecter' );@output_buffer...
+                              ^):
+    1: <%= simple_form_for @user_session do |f| %>
+    2: 	<%= f.input :login %>
+    3: 	<%= f.input :password %>
+    4: 	<%= f.button :submit 'Se connecter' %>
+    5: <% end %>
+  app/views/user_sessions/new.html.erb:8:in `compile'
+
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.7ms)
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (36.3ms)
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (39.9ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri Mar 18 00:05:22 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 28ms (Views: 13.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri Mar 18 00:05:51 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (3.4ms)
+Completed   in 21ms
+
+ActionView::Template::Error (can't convert Symbol into String):
+    1: <%= simple_form_for @user_session do |f| %>
+    2: 	<%= f.input :login %>
+    3: 	<%= f.input :password, 'mot de passe' %>
+    4: 	<%= f.button :submit, 'Se connecter' %>
+    5: <% end %>
+  app/views/user_sessions/new.html.erb:3:in `_app_views_user_sessions_new_html_erb___1886759615_2179865160_0'
+  app/views/user_sessions/new.html.erb:1:in `_app_views_user_sessions_new_html_erb___1886759615_2179865160_0'
+
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.7ms)
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.6ms)
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (7.3ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri Mar 18 00:06:07 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (4.0ms)
+Completed   in 54ms
+
+ActionView::Template::Error (undefined method `[]' for :password:Symbol):
+    1: <%= simple_form_for @user_session do |f| %>
+    2: 	<%= f.input :login %>
+    3: 	<%= f.input 'mot de passe', :password  %>
+    4: 	<%= f.button :submit, 'Se connecter' %>
+    5: <% end %>
+  app/views/user_sessions/new.html.erb:3:in `_app_views_user_sessions_new_html_erb___1886759615_2181219080_0'
+  app/views/user_sessions/new.html.erb:1:in `_app_views_user_sessions_new_html_erb___1886759615_2181219080_0'
+
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.7ms)
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.0ms)
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.1ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri Mar 18 00:06:10 +0100 2011
+  Processing by UserSessionsController#new as HTML
+ERROR: compiling _app_views_user_sessions_new_html_erb___1886759615_2179658180_0 RAISED compile error
+/Users/romainbourgois/Documents/rails/stAugustin/app/views/user_sessions/new.html.erb:3: syntax error, unexpected ':', expecting ')'
+...nd= ( f.input 'mot de passe' :password  );@output_buffer.saf...
+                              ^
+Function body:           def _app_views_user_sessions_new_html_erb___1886759615_2179658180_0(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "user_sessions/new";_old_output_buffer = @output_buffer;;@output_buffer = ActionView::OutputBuffer.new;@output_buffer.append=  simple_form_for @user_session do |f| @output_buffer.safe_concat('
+');@output_buffer.safe_concat('	');@output_buffer.append= ( f.input :login );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('	');@output_buffer.append= ( f.input 'mot de passe' :password  );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('	');@output_buffer.append= ( f.button :submit, 'Se connecter' );@output_buffer.safe_concat('
+'); end ;@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /Users/romainbourgois/Documents/rails/stAugustin/app/views/user_sessions/new.html.erb:8:in `compile'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_view/template.rb:134:in `render'
+/Users/romainbourgois/.gem/ruby/1.8/gems/activesupport-3.0.5/lib/active_support/notifications.rb:54:in `instrument'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_view/template.rb:127:in `render'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_view/render/rendering.rb:59:in `_render_template'
+/Users/romainbourgois/.gem/ruby/1.8/gems/activesupport-3.0.5/lib/active_support/notifications.rb:52:in `instrument'
+/Users/romainbourgois/.gem/ruby/1.8/gems/activesupport-3.0.5/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Users/romainbourgois/.gem/ruby/1.8/gems/activesupport-3.0.5/lib/active_support/notifications.rb:52:in `instrument'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_view/render/rendering.rb:56:in `_render_template'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_view/render/rendering.rb:26:in `render'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/abstract_controller/rendering.rb:115:in `_render_template'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/abstract_controller/rendering.rb:109:in `render_to_body'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/abstract_controller/rendering.rb:102:in `render_to_string'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/abstract_controller/rendering.rb:93:in `render'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_controller/metal/rendering.rb:17:in `render'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/Users/romainbourgois/.gem/ruby/1.8/gems/activesupport-3.0.5/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Users/romainbourgois/.gem/ruby/1.8/gems/activesupport-3.0.5/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/Users/romainbourgois/.gem/ruby/1.8/gems/activerecord-3.0.5/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/abstract_controller/base.rb:150:in `process_action'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/abstract_controller/callbacks.rb:18:in `process_action'
+/Users/romainbourgois/.gem/ruby/1.8/gems/activesupport-3.0.5/lib/active_support/callbacks.rb:440:in `_run__1703293750__process_action__943997142__callbacks'
+/Users/romainbourgois/.gem/ruby/1.8/gems/activesupport-3.0.5/lib/active_support/callbacks.rb:409:in `send'
+/Users/romainbourgois/.gem/ruby/1.8/gems/activesupport-3.0.5/lib/active_support/callbacks.rb:409:in `_run_process_action_callbacks'
+/Users/romainbourgois/.gem/ruby/1.8/gems/activesupport-3.0.5/lib/active_support/callbacks.rb:93:in `send'
+/Users/romainbourgois/.gem/ruby/1.8/gems/activesupport-3.0.5/lib/active_support/callbacks.rb:93:in `run_callbacks'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+/Users/romainbourgois/.gem/ruby/1.8/gems/activesupport-3.0.5/lib/active_support/notifications.rb:52:in `instrument'
+/Users/romainbourgois/.gem/ruby/1.8/gems/activesupport-3.0.5/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Users/romainbourgois/.gem/ruby/1.8/gems/activesupport-3.0.5/lib/active_support/notifications.rb:52:in `instrument'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/abstract_controller/base.rb:119:in `process'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/abstract_controller/rendering.rb:41:in `process'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_controller/metal.rb:138:in `dispatch'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_controller/metal.rb:178:in `action'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/Users/romainbourgois/.gem/ruby/1.8/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:148:in `call'
+/Users/romainbourgois/.gem/ruby/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:93:in `recognize'
+/Users/romainbourgois/.gem/ruby/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:68:in `optimized_each'
+/Users/romainbourgois/.gem/ruby/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:92:in `recognize'
+/Users/romainbourgois/.gem/ruby/1.8/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:139:in `call'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/routing/route_set.rb:492:in `call'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/head.rb:14:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.2/lib/rack/methodoverride.rb:24:in `call'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/cookies.rb:302:in `call'
+/Users/romainbourgois/.gem/ruby/1.8/gems/activerecord-3.0.5/lib/active_record/query_cache.rb:32:in `call'
+/Users/romainbourgois/.gem/ruby/1.8/gems/activerecord-3.0.5/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/Users/romainbourgois/.gem/ruby/1.8/gems/activerecord-3.0.5/lib/active_record/query_cache.rb:12:in `cache'
+/Users/romainbourgois/.gem/ruby/1.8/gems/activerecord-3.0.5/lib/active_record/query_cache.rb:31:in `call'
+/Users/romainbourgois/.gem/ruby/1.8/gems/activerecord-3.0.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:354:in `call'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/callbacks.rb:46:in `call'
+/Users/romainbourgois/.gem/ruby/1.8/gems/activesupport-3.0.5/lib/active_support/callbacks.rb:415:in `_run_call_callbacks'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.2/lib/rack/sendfile.rb:107:in `call'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.5/lib/rails/rack/logger.rb:13:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.2/lib/rack/runtime.rb:17:in `call'
+/Users/romainbourgois/.gem/ruby/1.8/gems/activesupport-3.0.5/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.2/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.2/lib/rack/lock.rb:11:in `synchronize'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.2/lib/rack/lock.rb:11:in `call'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/static.rb:30:in `call'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.5/lib/rails/application.rb:168:in `call'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.5/lib/rails/application.rb:77:in `send'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.5/lib/rails/application.rb:77:in `method_missing'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/rack/request_handler.rb:96:in `process_request'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/abstract_request_handler.rb:513:in `accept_and_process_next_request'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/abstract_request_handler.rb:274:in `main_loop'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/rack/application_spawner.rb:205:in `start_request_handler'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/rack/application_spawner.rb:170:in `send'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/rack/application_spawner.rb:170:in `handle_spawn_application'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/utils.rb:479:in `safe_fork'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/rack/application_spawner.rb:165:in `handle_spawn_application'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/abstract_server.rb:357:in `__send__'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/abstract_server.rb:180:in `start'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/rack/application_spawner.rb:128:in `start'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/spawn_manager.rb:253:in `spawn_rack_application'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/abstract_server_collection.rb:132:in `lookup_or_add'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/spawn_manager.rb:246:in `spawn_rack_application'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/abstract_server_collection.rb:82:in `synchronize'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/spawn_manager.rb:244:in `spawn_rack_application'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/spawn_manager.rb:137:in `spawn_application'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/spawn_manager.rb:275:in `handle_spawn_application'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/abstract_server.rb:357:in `__send__'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/helper-scripts/passenger-spawn-server:99
+Rendered user_sessions/new.html.erb within layouts/application (0.7ms)
+Completed   in 18ms
+
+ActionView::Template::Error (compile error
+/Users/romainbourgois/Documents/rails/stAugustin/app/views/user_sessions/new.html.erb:3: syntax error, unexpected ':', expecting ')'
+...nd= ( f.input 'mot de passe' :password  );@output_buffer.saf...
+                              ^):
+    1: <%= simple_form_for @user_session do |f| %>
+    2: 	<%= f.input :login %>
+    3: 	<%= f.input 'mot de passe' :password  %>
+    4: 	<%= f.button :submit, 'Se connecter' %>
+    5: <% end %>
+  app/views/user_sessions/new.html.erb:8:in `compile'
+
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.7ms)
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.6ms)
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (7.1ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri Mar 18 00:06:16 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 77ms (Views: 13.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri Mar 18 00:06:29 +0100 2011
+  Processing by UserSessionsController#new as HTML
+ERROR: compiling _app_views_user_sessions_new_html_erb___1886759615_2180464640_0 RAISED compile error
+/Users/romainbourgois/Documents/rails/stAugustin/app/views/user_sessions/new.html.erb:3: syntax error, unexpected ':', expecting ')'
+...nd= ( f.input 'mot de passe' :password  );@output_buffer.saf...
+                              ^
+Function body:           def _app_views_user_sessions_new_html_erb___1886759615_2180464640_0(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "user_sessions/new";_old_output_buffer = @output_buffer;;@output_buffer = ActionView::OutputBuffer.new;@output_buffer.append=  simple_form_for @user_session do |f| @output_buffer.safe_concat('
+');@output_buffer.safe_concat('	');@output_buffer.append= ( f.input :login );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('	');@output_buffer.append= ( f.input 'mot de passe' :password  );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('	');@output_buffer.append= ( f.button :submit, 'Se connecter' );@output_buffer.safe_concat('
+'); end ;@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /Users/romainbourgois/Documents/rails/stAugustin/app/views/user_sessions/new.html.erb:8:in `compile'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_view/template.rb:134:in `render'
+/Users/romainbourgois/.gem/ruby/1.8/gems/activesupport-3.0.5/lib/active_support/notifications.rb:54:in `instrument'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_view/template.rb:127:in `render'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_view/render/rendering.rb:59:in `_render_template'
+/Users/romainbourgois/.gem/ruby/1.8/gems/activesupport-3.0.5/lib/active_support/notifications.rb:52:in `instrument'
+/Users/romainbourgois/.gem/ruby/1.8/gems/activesupport-3.0.5/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Users/romainbourgois/.gem/ruby/1.8/gems/activesupport-3.0.5/lib/active_support/notifications.rb:52:in `instrument'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_view/render/rendering.rb:56:in `_render_template'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_view/render/rendering.rb:26:in `render'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/abstract_controller/rendering.rb:115:in `_render_template'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/abstract_controller/rendering.rb:109:in `render_to_body'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/abstract_controller/rendering.rb:102:in `render_to_string'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/abstract_controller/rendering.rb:93:in `render'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_controller/metal/rendering.rb:17:in `render'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/Users/romainbourgois/.gem/ruby/1.8/gems/activesupport-3.0.5/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Users/romainbourgois/.gem/ruby/1.8/gems/activesupport-3.0.5/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/Users/romainbourgois/.gem/ruby/1.8/gems/activerecord-3.0.5/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/abstract_controller/base.rb:150:in `process_action'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/abstract_controller/callbacks.rb:18:in `process_action'
+/Users/romainbourgois/.gem/ruby/1.8/gems/activesupport-3.0.5/lib/active_support/callbacks.rb:440:in `_run__1703293750__process_action__943997142__callbacks'
+/Users/romainbourgois/.gem/ruby/1.8/gems/activesupport-3.0.5/lib/active_support/callbacks.rb:409:in `send'
+/Users/romainbourgois/.gem/ruby/1.8/gems/activesupport-3.0.5/lib/active_support/callbacks.rb:409:in `_run_process_action_callbacks'
+/Users/romainbourgois/.gem/ruby/1.8/gems/activesupport-3.0.5/lib/active_support/callbacks.rb:93:in `send'
+/Users/romainbourgois/.gem/ruby/1.8/gems/activesupport-3.0.5/lib/active_support/callbacks.rb:93:in `run_callbacks'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+/Users/romainbourgois/.gem/ruby/1.8/gems/activesupport-3.0.5/lib/active_support/notifications.rb:52:in `instrument'
+/Users/romainbourgois/.gem/ruby/1.8/gems/activesupport-3.0.5/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Users/romainbourgois/.gem/ruby/1.8/gems/activesupport-3.0.5/lib/active_support/notifications.rb:52:in `instrument'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/abstract_controller/base.rb:119:in `process'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/abstract_controller/rendering.rb:41:in `process'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_controller/metal.rb:138:in `dispatch'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_controller/metal.rb:178:in `action'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/Users/romainbourgois/.gem/ruby/1.8/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:148:in `call'
+/Users/romainbourgois/.gem/ruby/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:93:in `recognize'
+/Users/romainbourgois/.gem/ruby/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:68:in `optimized_each'
+/Users/romainbourgois/.gem/ruby/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:92:in `recognize'
+/Users/romainbourgois/.gem/ruby/1.8/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:139:in `call'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/routing/route_set.rb:492:in `call'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/head.rb:14:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.2/lib/rack/methodoverride.rb:24:in `call'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/cookies.rb:302:in `call'
+/Users/romainbourgois/.gem/ruby/1.8/gems/activerecord-3.0.5/lib/active_record/query_cache.rb:32:in `call'
+/Users/romainbourgois/.gem/ruby/1.8/gems/activerecord-3.0.5/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/Users/romainbourgois/.gem/ruby/1.8/gems/activerecord-3.0.5/lib/active_record/query_cache.rb:12:in `cache'
+/Users/romainbourgois/.gem/ruby/1.8/gems/activerecord-3.0.5/lib/active_record/query_cache.rb:31:in `call'
+/Users/romainbourgois/.gem/ruby/1.8/gems/activerecord-3.0.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:354:in `call'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/callbacks.rb:46:in `call'
+/Users/romainbourgois/.gem/ruby/1.8/gems/activesupport-3.0.5/lib/active_support/callbacks.rb:415:in `_run_call_callbacks'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.2/lib/rack/sendfile.rb:107:in `call'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.5/lib/rails/rack/logger.rb:13:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.2/lib/rack/runtime.rb:17:in `call'
+/Users/romainbourgois/.gem/ruby/1.8/gems/activesupport-3.0.5/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.2/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.2/lib/rack/lock.rb:11:in `synchronize'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.2/lib/rack/lock.rb:11:in `call'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/static.rb:30:in `call'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.5/lib/rails/application.rb:168:in `call'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.5/lib/rails/application.rb:77:in `send'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.5/lib/rails/application.rb:77:in `method_missing'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/rack/request_handler.rb:96:in `process_request'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/abstract_request_handler.rb:513:in `accept_and_process_next_request'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/abstract_request_handler.rb:274:in `main_loop'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/rack/application_spawner.rb:205:in `start_request_handler'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/rack/application_spawner.rb:170:in `send'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/rack/application_spawner.rb:170:in `handle_spawn_application'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/utils.rb:479:in `safe_fork'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/rack/application_spawner.rb:165:in `handle_spawn_application'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/abstract_server.rb:357:in `__send__'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/abstract_server.rb:180:in `start'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/rack/application_spawner.rb:128:in `start'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/spawn_manager.rb:253:in `spawn_rack_application'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/abstract_server_collection.rb:132:in `lookup_or_add'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/spawn_manager.rb:246:in `spawn_rack_application'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/abstract_server_collection.rb:82:in `synchronize'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/spawn_manager.rb:244:in `spawn_rack_application'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/spawn_manager.rb:137:in `spawn_application'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/spawn_manager.rb:275:in `handle_spawn_application'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/abstract_server.rb:357:in `__send__'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/helper-scripts/passenger-spawn-server:99
+Rendered user_sessions/new.html.erb within layouts/application (0.8ms)
+Completed   in 19ms
+
+ActionView::Template::Error (compile error
+/Users/romainbourgois/Documents/rails/stAugustin/app/views/user_sessions/new.html.erb:3: syntax error, unexpected ':', expecting ')'
+...nd= ( f.input 'mot de passe' :password  );@output_buffer.saf...
+                              ^):
+    1: <%= simple_form_for @user_session do |f| %>
+    2: 	<%= f.input :login %>
+    3: 	<%= f.input 'mot de passe' :password  %>
+    4: 	<%= f.button :submit, 'Se connecter' %>
+    5: <% end %>
+  app/views/user_sessions/new.html.erb:8:in `compile'
+
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.7ms)
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.6ms)
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (7.4ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri Mar 18 00:06:35 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.0ms)
+Completed   in 19ms
+
+ActionView::Template::Error (undefined method `[]' for :password:Symbol):
+    1: <%= simple_form_for @user_session do |f| %>
+    2: 	<%= f.input :login %>
+    3: 	<%= f.input 'mot de passe', :password  %>
+    4: 	<%= f.button :submit, 'Se connecter' %>
+    5: <% end %>
+  app/views/user_sessions/new.html.erb:3:in `_app_views_user_sessions_new_html_erb___1886759615_2179122000_0'
+  app/views/user_sessions/new.html.erb:1:in `_app_views_user_sessions_new_html_erb___1886759615_2179122000_0'
+
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.7ms)
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.7ms)
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (51.7ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri Mar 18 00:06:51 +0100 2011
+  Processing by UserSessionsController#new as HTML
+ERROR: compiling _app_views_user_sessions_new_html_erb___1886759615_2180728500_0 RAISED compile error
+/Users/romainbourgois/Documents/rails/stAugustin/app/views/user_sessions/new.html.erb:3: syntax error, unexpected tSTRING_BEG, expecting ')'
+....append= ( f.input :password 'mot de passe' );@output_buffer...
+                              ^
+Function body:           def _app_views_user_sessions_new_html_erb___1886759615_2180728500_0(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "user_sessions/new";_old_output_buffer = @output_buffer;;@output_buffer = ActionView::OutputBuffer.new;@output_buffer.append=  simple_form_for @user_session do |f| @output_buffer.safe_concat('
+');@output_buffer.safe_concat('	');@output_buffer.append= ( f.input :login );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('	');@output_buffer.append= ( f.input :password 'mot de passe' );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('	');@output_buffer.append= ( f.button :submit, 'Se connecter' );@output_buffer.safe_concat('
+'); end ;@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /Users/romainbourgois/Documents/rails/stAugustin/app/views/user_sessions/new.html.erb:8:in `compile'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_view/template.rb:134:in `render'
+/Users/romainbourgois/.gem/ruby/1.8/gems/activesupport-3.0.5/lib/active_support/notifications.rb:54:in `instrument'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_view/template.rb:127:in `render'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_view/render/rendering.rb:59:in `_render_template'
+/Users/romainbourgois/.gem/ruby/1.8/gems/activesupport-3.0.5/lib/active_support/notifications.rb:52:in `instrument'
+/Users/romainbourgois/.gem/ruby/1.8/gems/activesupport-3.0.5/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Users/romainbourgois/.gem/ruby/1.8/gems/activesupport-3.0.5/lib/active_support/notifications.rb:52:in `instrument'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_view/render/rendering.rb:56:in `_render_template'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_view/render/rendering.rb:26:in `render'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/abstract_controller/rendering.rb:115:in `_render_template'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/abstract_controller/rendering.rb:109:in `render_to_body'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/abstract_controller/rendering.rb:102:in `render_to_string'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/abstract_controller/rendering.rb:93:in `render'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_controller/metal/rendering.rb:17:in `render'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/Users/romainbourgois/.gem/ruby/1.8/gems/activesupport-3.0.5/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Users/romainbourgois/.gem/ruby/1.8/gems/activesupport-3.0.5/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/Users/romainbourgois/.gem/ruby/1.8/gems/activerecord-3.0.5/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/abstract_controller/base.rb:150:in `process_action'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/abstract_controller/callbacks.rb:18:in `process_action'
+/Users/romainbourgois/.gem/ruby/1.8/gems/activesupport-3.0.5/lib/active_support/callbacks.rb:440:in `_run__1703293750__process_action__943997142__callbacks'
+/Users/romainbourgois/.gem/ruby/1.8/gems/activesupport-3.0.5/lib/active_support/callbacks.rb:409:in `send'
+/Users/romainbourgois/.gem/ruby/1.8/gems/activesupport-3.0.5/lib/active_support/callbacks.rb:409:in `_run_process_action_callbacks'
+/Users/romainbourgois/.gem/ruby/1.8/gems/activesupport-3.0.5/lib/active_support/callbacks.rb:93:in `send'
+/Users/romainbourgois/.gem/ruby/1.8/gems/activesupport-3.0.5/lib/active_support/callbacks.rb:93:in `run_callbacks'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+/Users/romainbourgois/.gem/ruby/1.8/gems/activesupport-3.0.5/lib/active_support/notifications.rb:52:in `instrument'
+/Users/romainbourgois/.gem/ruby/1.8/gems/activesupport-3.0.5/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Users/romainbourgois/.gem/ruby/1.8/gems/activesupport-3.0.5/lib/active_support/notifications.rb:52:in `instrument'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/abstract_controller/base.rb:119:in `process'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/abstract_controller/rendering.rb:41:in `process'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_controller/metal.rb:138:in `dispatch'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_controller/metal.rb:178:in `action'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/Users/romainbourgois/.gem/ruby/1.8/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:148:in `call'
+/Users/romainbourgois/.gem/ruby/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:93:in `recognize'
+/Users/romainbourgois/.gem/ruby/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:68:in `optimized_each'
+/Users/romainbourgois/.gem/ruby/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:92:in `recognize'
+/Users/romainbourgois/.gem/ruby/1.8/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:139:in `call'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/routing/route_set.rb:492:in `call'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/head.rb:14:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.2/lib/rack/methodoverride.rb:24:in `call'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/cookies.rb:302:in `call'
+/Users/romainbourgois/.gem/ruby/1.8/gems/activerecord-3.0.5/lib/active_record/query_cache.rb:32:in `call'
+/Users/romainbourgois/.gem/ruby/1.8/gems/activerecord-3.0.5/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/Users/romainbourgois/.gem/ruby/1.8/gems/activerecord-3.0.5/lib/active_record/query_cache.rb:12:in `cache'
+/Users/romainbourgois/.gem/ruby/1.8/gems/activerecord-3.0.5/lib/active_record/query_cache.rb:31:in `call'
+/Users/romainbourgois/.gem/ruby/1.8/gems/activerecord-3.0.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:354:in `call'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/callbacks.rb:46:in `call'
+/Users/romainbourgois/.gem/ruby/1.8/gems/activesupport-3.0.5/lib/active_support/callbacks.rb:415:in `_run_call_callbacks'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.2/lib/rack/sendfile.rb:107:in `call'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.5/lib/rails/rack/logger.rb:13:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.2/lib/rack/runtime.rb:17:in `call'
+/Users/romainbourgois/.gem/ruby/1.8/gems/activesupport-3.0.5/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.2/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.2/lib/rack/lock.rb:11:in `synchronize'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.2/lib/rack/lock.rb:11:in `call'
+/Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/static.rb:30:in `call'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.5/lib/rails/application.rb:168:in `call'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.5/lib/rails/application.rb:77:in `send'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.5/lib/rails/application.rb:77:in `method_missing'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/rack/request_handler.rb:96:in `process_request'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/abstract_request_handler.rb:513:in `accept_and_process_next_request'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/abstract_request_handler.rb:274:in `main_loop'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/rack/application_spawner.rb:205:in `start_request_handler'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/rack/application_spawner.rb:170:in `send'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/rack/application_spawner.rb:170:in `handle_spawn_application'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/utils.rb:479:in `safe_fork'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/rack/application_spawner.rb:165:in `handle_spawn_application'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/abstract_server.rb:357:in `__send__'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/abstract_server.rb:180:in `start'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/rack/application_spawner.rb:128:in `start'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/spawn_manager.rb:253:in `spawn_rack_application'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/abstract_server_collection.rb:132:in `lookup_or_add'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/spawn_manager.rb:246:in `spawn_rack_application'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/abstract_server_collection.rb:82:in `synchronize'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/spawn_manager.rb:244:in `spawn_rack_application'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/spawn_manager.rb:137:in `spawn_application'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/spawn_manager.rb:275:in `handle_spawn_application'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/abstract_server.rb:357:in `__send__'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+/Users/romainbourgois/.passenger/standalone/3.0.5-universal-ruby1.8.7-x86_64-macosx-10.6/support/helper-scripts/passenger-spawn-server:99
+Rendered user_sessions/new.html.erb within layouts/application (0.9ms)
+Completed   in 16ms
+
+ActionView::Template::Error (compile error
+/Users/romainbourgois/Documents/rails/stAugustin/app/views/user_sessions/new.html.erb:3: syntax error, unexpected tSTRING_BEG, expecting ')'
+....append= ( f.input :password 'mot de passe' );@output_buffer...
+                              ^):
+    1: <%= simple_form_for @user_session do |f| %>
+    2: 	<%= f.input :login %>
+    3: 	<%= f.input :password 'mot de passe' %>
+    4: 	<%= f.button :submit, 'Se connecter' %>
+    5: <% end %>
+  app/views/user_sessions/new.html.erb:8:in `compile'
+
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.6ms)
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (12.2ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri Mar 18 00:06:57 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.4ms)
+Completed   in 24ms
+
+ActionView::Template::Error (can't convert Symbol into String):
+    1: <%= simple_form_for @user_session do |f| %>
+    2: 	<%= f.input :login %>
+    3: 	<%= f.input :password ,'mot de passe' %>
+    4: 	<%= f.button :submit, 'Se connecter' %>
+    5: <% end %>
+  app/views/user_sessions/new.html.erb:3:in `_app_views_user_sessions_new_html_erb___1886759615_2179291180_0'
+  app/views/user_sessions/new.html.erb:1:in `_app_views_user_sessions_new_html_erb___1886759615_2179291180_0'
+
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (44.2ms)
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (49.8ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri Mar 18 00:09:37 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 17ms (Views: 7.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri Mar 18 00:19:57 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 17ms (Views: 7.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri Mar 18 00:32:16 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (38.9ms)
+Completed 200 OK in 51ms (Views: 42.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri Mar 18 00:45:36 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 17ms (Views: 8.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri Mar 18 00:45:37 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 18ms (Views: 8.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri Mar 18 00:45:37 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 17ms (Views: 7.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri Mar 18 00:45:37 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 18ms (Views: 8.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:18:31 +0100 2011
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:18:31 +0100 2011
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:18:31 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (17.0ms)
+Completed 200 OK in 39ms (Views: 22.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:18:31 +0100 2011
+  Processing by UserSessionsController#new as HTML
+  Processing by UserSessionsController#new as HTML
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 29ms (Views: 14.5ms | ActiveRecord: 0.0ms)
+Rendered user_sessions/new.html.erb within layouts/application (17.7ms)
+Completed 200 OK in 38ms (Views: 23.3ms | ActiveRecord: 0.0ms)
+Rendered user_sessions/new.html.erb within layouts/application (22.6ms)
+Completed 200 OK in 45ms (Views: 28.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:19:10 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 18ms (Views: 8.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:19:14 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 49ms (Views: 7.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:19:15 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 18ms (Views: 8.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:19:15 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 18ms (Views: 8.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:19:15 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 53ms (Views: 8.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:19:31 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 23ms (Views: 9.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/user_sessions" for 127.0.0.1 at Sat Mar 19 12:20:10 +0100 2011
+  Processing by UserSessionsController#create as HTML
+  Parameters: {"commit"=>"Se connecter", "user_session"=>{"login"=>"r", "password"=>"[FILTERED]"}, "authenticity_token"=>"qqUwaGh6w0ZPj92GpxwuOiFDG1WQy3Sbrv5FHPXk5xU=", "utf8"=>"✓"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:20:10 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 17ms (Views: 8.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:20:26 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 69ms (Views: 9.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/user_sessions" for 127.0.0.1 at Sat Mar 19 12:20:32 +0100 2011
+  Processing by UserSessionsController#create as HTML
+  Parameters: {"commit"=>"Se connecter", "user_session"=>{"login"=>"aa", "password"=>"[FILTERED]"}, "authenticity_token"=>"qqUwaGh6w0ZPj92GpxwuOiFDG1WQy3Sbrv5FHPXk5xU=", "utf8"=>"✓"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:20:32 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 17ms (Views: 8.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:23:03 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 18ms (Views: 8.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:23:03 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 17ms (Views: 7.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:23:06 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 22ms (Views: 10.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:23:59 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 28ms (Views: 13.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:24:01 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 52ms (Views: 8.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:24:01 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 18ms (Views: 8.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:24:01 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 18ms (Views: 8.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:24:01 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 53ms (Views: 8.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:24:02 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 18ms (Views: 8.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:24:09 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Completed   in 13ms
+
+ArgumentError (wrong number of arguments (1 for 0)):
+  app/controllers/user_sessions_controller.rb:5:in `new'
+
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.8ms)
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.4ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:24:34 +0100 2011
+
+SyntaxError (/Users/romainbourgois/Documents/rails/stAugustin/app/controllers/user_sessions_controller.rb:5: syntax error, unexpected tASSOC, expecting kEND
+    flash[:notice] => "The product has been created successfully!"
+                     ^):
+  
+
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.6ms)
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:24:35 +0100 2011
+
+SyntaxError (/Users/romainbourgois/Documents/rails/stAugustin/app/controllers/user_sessions_controller.rb:5: syntax error, unexpected tASSOC, expecting kEND
+    flash[:notice] => "The product has been created successfully!"
+                     ^):
+  
+
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.7ms)
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (4.7ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:24:39 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 18ms (Views: 8.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:25:36 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 17ms (Views: 8.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:25:37 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 52ms (Views: 8.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:25:37 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 19ms (Views: 8.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:25:37 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 21ms (Views: 10.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:25:37 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 56ms (Views: 8.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:25:38 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 20ms (Views: 8.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:25:38 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 20ms (Views: 9.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:25:38 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 55ms (Views: 8.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/user_sessions" for 127.0.0.1 at Sat Mar 19 12:25:45 +0100 2011
+  Processing by UserSessionsController#create as HTML
+  Parameters: {"commit"=>"Se connecter", "user_session"=>{"login"=>"cedc", "password"=>"[FILTERED]"}, "authenticity_token"=>"qqUwaGh6w0ZPj92GpxwuOiFDG1WQy3Sbrv5FHPXk5xU=", "utf8"=>"✓"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:25:45 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 17ms (Views: 8.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:26:10 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 17ms (Views: 8.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:26:11 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 23ms (Views: 11.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:26:11 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 18ms (Views: 8.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:26:12 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 19ms (Views: 8.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:26:13 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 53ms (Views: 8.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:26:14 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 17ms (Views: 8.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:26:14 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 17ms (Views: 8.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:26:14 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 54ms (Views: 8.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:26:14 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 18ms (Views: 8.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:26:40 +0100 2011
+
+SyntaxError (/Users/romainbourgois/Documents/rails/stAugustin/app/controllers/user_sessions_controller.rb:5: syntax error, unexpected tASSOC, expecting kEND
+      flash[:notice] => "The product has been created successfully!"
+                       ^):
+  
+
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.7ms)
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.6ms)
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (4.8ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:26:50 +0100 2011
+
+SyntaxError (/Users/romainbourgois/Documents/rails/stAugustin/app/controllers/user_sessions_controller.rb:5: syntax error, unexpected tASSOC, expecting kEND
+      flash[:notice] => "The product has been created successfully!"
+                       ^):
+  
+
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.6ms)
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (4.6ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:26:56 +0100 2011
+
+SyntaxError (/Users/romainbourgois/Documents/rails/stAugustin/app/controllers/user_sessions_controller.rb:5: syntax error, unexpected tASSOC, expecting kEND
+      flash[:notice] => "The product has been created successfully!"
+                       ^):
+  
+
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.7ms)
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.4ms)
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (4.7ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:27:22 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 18ms (Views: 8.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:27:23 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 22ms (Views: 11.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:27:23 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 18ms (Views: 8.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:27:24 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 53ms (Views: 8.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:27:34 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 17ms (Views: 8.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:27:35 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 17ms (Views: 8.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:32:38 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 54ms (Views: 8.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:32:39 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 18ms (Views: 8.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:32:39 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 19ms (Views: 8.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:32:50 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 53ms (Views: 8.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:32:51 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 18ms (Views: 8.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:32:52 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 19ms (Views: 8.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:32:52 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 54ms (Views: 8.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:32:56 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 17ms (Views: 8.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:32:56 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 17ms (Views: 8.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:32:56 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 55ms (Views: 8.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:36:17 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 18ms (Views: 9.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:36:18 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 18ms (Views: 8.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:36:18 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 57ms (Views: 9.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:36:18 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 24ms (Views: 10.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:36:27 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 29ms (Views: 15.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:36:28 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 65ms (Views: 51.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:36:33 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 22ms (Views: 9.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:37:09 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 18ms (Views: 8.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:37:09 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (41.5ms)
+Completed 200 OK in 54ms (Views: 44.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:37:10 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 20ms (Views: 10.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:37:10 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 26ms (Views: 14.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:37:10 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (49.0ms)
+Completed 200 OK in 66ms (Views: 53.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:37:10 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 29ms (Views: 13.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:37:13 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 27ms (Views: 15.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:37:32 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 18ms (Views: 8.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:37:32 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 50ms (Views: 8.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:37:32 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 18ms (Views: 8.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:37:33 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 19ms (Views: 8.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:37:59 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 53ms (Views: 8.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:37:59 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 18ms (Views: 8.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:38:00 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 19ms (Views: 8.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:38:00 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 54ms (Views: 44.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:38:00 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 18ms (Views: 8.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:38:04 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 18ms (Views: 8.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:38:05 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (41.9ms)
+Completed 200 OK in 57ms (Views: 45.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:38:05 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 19ms (Views: 9.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:40:48 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 17ms (Views: 8.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:40:48 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (40.5ms)
+Completed 200 OK in 53ms (Views: 43.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:40:49 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 19ms (Views: 9.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:40:49 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 19ms (Views: 9.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:40:49 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 18ms (Views: 8.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:40:49 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 19ms (Views: 9.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:40:49 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 21ms (Views: 10.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:40:59 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 23ms (Views: 12.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:42:05 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 18ms (Views: 8.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:42:06 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 18ms (Views: 8.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:42:06 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 18ms (Views: 8.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:42:07 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 18ms (Views: 8.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:42:24 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 18ms (Views: 8.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:42:25 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 18ms (Views: 8.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:42:25 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 19ms (Views: 8.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:42:25 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 20ms (Views: 9.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:42:26 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 19ms (Views: 10.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:42:26 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 18ms (Views: 8.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:42:27 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 19ms (Views: 8.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:42:27 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 20ms (Views: 8.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:42:27 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 60ms (Views: 8.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:42:40 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 18ms (Views: 8.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:42:41 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 25ms (Views: 12.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:42:41 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 53ms (Views: 8.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:42:41 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 18ms (Views: 8.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:43:02 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Completed   in 14ms
+
+NoMethodError (undefined method `add_gritter' for #<UserSessionsController:0x104eede28>):
+  app/controllers/user_sessions_controller.rb:6:in `new'
+
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.0ms)
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (12.1ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:43:03 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Completed   in 10ms
+
+NoMethodError (undefined method `add_gritter' for #<UserSessionsController:0x105259d78>):
+  app/controllers/user_sessions_controller.rb:6:in `new'
+
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.7ms)
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.6ms)
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.9ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:43:03 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Completed   in 10ms
+
+NoMethodError (undefined method `add_gritter' for #<UserSessionsController:0x104f4b8c0>):
+  app/controllers/user_sessions_controller.rb:6:in `new'
+
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.6ms)
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.9ms)
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.2ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:43:04 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Completed   in 10ms
+
+NoMethodError (undefined method `add_gritter' for #<UserSessionsController:0x104ce3c90>):
+  app/controllers/user_sessions_controller.rb:6:in `new'
+
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.7ms)
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.7ms)
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:43:04 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Completed   in 13ms
+
+NoMethodError (undefined method `add_gritter' for #<UserSessionsController:0x104f9ae48>):
+  app/controllers/user_sessions_controller.rb:6:in `new'
+
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.9ms)
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.5ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:43:04 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Completed   in 44ms
+
+NoMethodError (undefined method `add_gritter' for #<UserSessionsController:0x104d2ed80>):
+  app/controllers/user_sessions_controller.rb:6:in `new'
+
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.1ms)
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (12.7ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:43:32 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 18ms (Views: 8.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:43:34 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 17ms (Views: 8.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:43:35 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 17ms (Views: 7.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:43:35 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 17ms (Views: 7.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:51:20 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 18ms (Views: 8.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:51:20 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 53ms (Views: 8.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:51:21 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 18ms (Views: 8.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:51:21 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 20ms (Views: 9.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:51:21 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 57ms (Views: 9.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:51:21 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 22ms (Views: 8.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:51:21 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 19ms (Views: 9.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:51:22 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 54ms (Views: 8.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:51:22 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 20ms (Views: 10.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:51:25 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 18ms (Views: 8.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:51:25 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 54ms (Views: 9.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:51:25 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 24ms (Views: 9.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:51:26 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 19ms (Views: 9.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:51:34 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 53ms (Views: 8.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:51:35 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 18ms (Views: 8.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:51:35 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 20ms (Views: 9.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:51:35 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 54ms (Views: 8.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:51:35 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 18ms (Views: 8.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:51:35 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 18ms (Views: 8.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:51:36 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 61ms (Views: 8.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:51:36 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 18ms (Views: 8.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:51:36 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 18ms (Views: 8.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:51:36 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 54ms (Views: 8.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:51:38 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 18ms (Views: 8.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:51:39 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 18ms (Views: 8.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:51:39 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 58ms (Views: 8.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:51:39 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 25ms (Views: 9.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:51:40 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 18ms (Views: 8.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:51:40 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 54ms (Views: 44.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:53:23 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 18ms (Views: 8.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:54:29 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (26.0ms)
+Completed   in 38ms
+
+ActionView::Template::Error (private method `gsub' called for :notice:Symbol):
+    12: 	 	<div class="info">  
+    13: 	    	<%- flash.each do |name, msg| -%>  
+    14: 	        	<%= content_tag :div, msg, :id => "flash_#{name}" %>  
+    15: 				<%= js add_gritter(flash[:notice], :image => :notice, :title => :notice, :sticky => true) %>
+    16: 	        <%- end -%>  
+    17: 		</div>  
+    18: 	<% end %>
+  app/views/layouts/application.html.erb:15:in `_app_views_layouts_application_html_erb___113965238_2188711280_0'
+  app/views/layouts/application.html.erb:13:in `each'
+  app/views/layouts/application.html.erb:13:in `_app_views_layouts_application_html_erb___113965238_2188711280_0'
+
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.7ms)
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.7ms)
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (7.2ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:54:35 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 18ms (Views: 8.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:54:54 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 17ms (Views: 8.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:54:57 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 18ms (Views: 8.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:54:59 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 18ms (Views: 8.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:54:59 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 19ms (Views: 8.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:54:59 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 19ms (Views: 8.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:55:07 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 18ms (Views: 8.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:55:08 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 17ms (Views: 8.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:55:08 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 18ms (Views: 8.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:55:08 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 54ms (Views: 8.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:55:09 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 19ms (Views: 8.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:55:09 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 21ms (Views: 9.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:55:09 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 59ms (Views: 9.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:55:15 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 21ms (Views: 8.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:55:17 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 18ms (Views: 8.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:55:18 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 54ms (Views: 8.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:55:19 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 18ms (Views: 8.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:55:20 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 18ms (Views: 8.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:55:20 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 57ms (Views: 10.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:55:21 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 19ms (Views: 8.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:55:21 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 19ms (Views: 9.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:55:21 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 58ms (Views: 9.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:55:21 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 20ms (Views: 8.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:55:22 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 19ms (Views: 8.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:55:22 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 57ms (Views: 9.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:56:40 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 18ms (Views: 8.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:56:41 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 18ms (Views: 8.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:56:41 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 53ms (Views: 8.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:56:42 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 18ms (Views: 8.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:56:42 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 18ms (Views: 8.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:57:03 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (41.6ms)
+Completed 200 OK in 54ms (Views: 44.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:57:03 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 18ms (Views: 8.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:57:04 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 18ms (Views: 8.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:57:04 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (41.1ms)
+Completed 200 OK in 55ms (Views: 44.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:57:04 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 19ms (Views: 8.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:57:33 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.3ms)
+Completed   in 18ms
+
+ActionView::Template::Error (private method `gsub' called for :notice:Symbol):
+    13: 	    	<%- flash.each do |name, msg| -%>  
+    14: 				<%= name %>
+    15: 	        	<%= content_tag :div, msg, :id => "flash_#{name}" %>  
+    16: 				<%= js add_gritter(name, :image => :name, :sticky => true) %>
+    17: 	        <%- end -%>  
+    18: 		</div>  
+    19: 	<% end %>
+  app/views/layouts/application.html.erb:16:in `_app_views_layouts_application_html_erb___113965238_2188771700_0'
+  app/views/layouts/application.html.erb:13:in `each'
+  app/views/layouts/application.html.erb:13:in `_app_views_layouts_application_html_erb___113965238_2188771700_0'
+
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.7ms)
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.0ms)
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (7.3ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:57:41 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 19ms (Views: 8.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/name" for 127.0.0.1 at Sat Mar 19 12:57:41 +0100 2011
+
+ActionController::RoutingError (No route matches "/name"):
+  
+
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:57:50 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 19ms (Views: 8.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:57:59 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 18ms (Views: 8.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:58:09 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 18ms (Views: 8.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/alert" for 127.0.0.1 at Sat Mar 19 12:58:09 +0100 2011
+
+ActionController::RoutingError (No route matches "/alert"):
+  
+
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:58:10 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 18ms (Views: 8.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/alert" for 127.0.0.1 at Sat Mar 19 12:58:10 +0100 2011
+
+ActionController::RoutingError (No route matches "/alert"):
+  
+
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:58:10 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 18ms (Views: 8.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/alert" for 127.0.0.1 at Sat Mar 19 12:58:11 +0100 2011
+
+ActionController::RoutingError (No route matches "/alert"):
+  
+
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:58:11 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 21ms (Views: 9.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/alert" for 127.0.0.1 at Sat Mar 19 12:58:11 +0100 2011
+
+ActionController::RoutingError (No route matches "/alert"):
+  
+
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:58:36 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 18ms (Views: 8.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/alert" for 127.0.0.1 at Sat Mar 19 12:58:36 +0100 2011
+
+ActionController::RoutingError (No route matches "/alert"):
+  
+
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 12:59:33 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 54ms (Views: 8.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/gritter/progress.png" for 127.0.0.1 at Sat Mar 19 12:59:33 +0100 2011
+
+ActionController::RoutingError (No route matches "/images/gritter/progress.png"):
+  
+
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 13:00:11 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 18ms (Views: 8.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/gritter/progress.png" for 127.0.0.1 at Sat Mar 19 13:00:11 +0100 2011
+
+ActionController::RoutingError (No route matches "/images/gritter/progress.png"):
+  
+
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 13:00:14 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 18ms (Views: 8.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/gritter/progress.png" for 127.0.0.1 at Sat Mar 19 13:00:14 +0100 2011
+
+ActionController::RoutingError (No route matches "/images/gritter/progress.png"):
+  
+
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 13:00:14 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 19ms (Views: 9.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/gritter/progress.png" for 127.0.0.1 at Sat Mar 19 13:00:15 +0100 2011
+
+ActionController::RoutingError (No route matches "/images/gritter/progress.png"):
+  
+
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 13:00:15 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 19ms (Views: 8.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/gritter/progress.png" for 127.0.0.1 at Sat Mar 19 13:00:15 +0100 2011
+
+ActionController::RoutingError (No route matches "/images/gritter/progress.png"):
+  
+
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 13:00:16 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 18ms (Views: 9.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/gritter/progress.png" for 127.0.0.1 at Sat Mar 19 13:00:16 +0100 2011
+
+ActionController::RoutingError (No route matches "/images/gritter/progress.png"):
+  
+
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 13:00:16 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 20ms (Views: 9.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/gritter/progress.png" for 127.0.0.1 at Sat Mar 19 13:00:16 +0100 2011
+
+ActionController::RoutingError (No route matches "/images/gritter/progress.png"):
+  
+
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 13:00:16 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 20ms (Views: 10.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/gritter/progress.png" for 127.0.0.1 at Sat Mar 19 13:00:16 +0100 2011
+
+ActionController::RoutingError (No route matches "/images/gritter/progress.png"):
+  
+
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 13:00:17 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 54ms (Views: 8.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/gritter/progress.png" for 127.0.0.1 at Sat Mar 19 13:00:17 +0100 2011
+
+ActionController::RoutingError (No route matches "/images/gritter/progress.png"):
+  
+
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 13:00:17 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 19ms (Views: 8.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/gritter/progress.png" for 127.0.0.1 at Sat Mar 19 13:00:18 +0100 2011
+
+ActionController::RoutingError (No route matches "/images/gritter/progress.png"):
+  
+
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 13:00:18 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 19ms (Views: 9.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/gritter/progress.png" for 127.0.0.1 at Sat Mar 19 13:00:18 +0100 2011
+
+ActionController::RoutingError (No route matches "/images/gritter/progress.png"):
+  
+
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 13:00:18 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 60ms (Views: 9.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/gritter/progress.png" for 127.0.0.1 at Sat Mar 19 13:00:18 +0100 2011
+
+ActionController::RoutingError (No route matches "/images/gritter/progress.png"):
+  
+
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 13:00:19 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 22ms (Views: 10.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/gritter/progress.png" for 127.0.0.1 at Sat Mar 19 13:00:19 +0100 2011
+
+ActionController::RoutingError (No route matches "/images/gritter/progress.png"):
+  
+
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 13:00:19 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 22ms (Views: 11.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/gritter/progress.png" for 127.0.0.1 at Sat Mar 19 13:00:19 +0100 2011
+
+ActionController::RoutingError (No route matches "/images/gritter/progress.png"):
+  
+
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 13:00:19 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 21ms (Views: 10.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/gritter/progress.png" for 127.0.0.1 at Sat Mar 19 13:00:19 +0100 2011
+
+ActionController::RoutingError (No route matches "/images/gritter/progress.png"):
+  
+
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 13:00:19 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 21ms (Views: 10.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/gritter/progress.png" for 127.0.0.1 at Sat Mar 19 13:00:19 +0100 2011
+
+ActionController::RoutingError (No route matches "/images/gritter/progress.png"):
+  
+
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 13:00:20 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 63ms (Views: 51.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/gritter/progress.png" for 127.0.0.1 at Sat Mar 19 13:00:20 +0100 2011
+
+ActionController::RoutingError (No route matches "/images/gritter/progress.png"):
+  
+
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 13:00:20 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 23ms (Views: 10.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/gritter/progress.png" for 127.0.0.1 at Sat Mar 19 13:00:20 +0100 2011
+
+ActionController::RoutingError (No route matches "/images/gritter/progress.png"):
+  
+
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 13:00:20 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 21ms (Views: 9.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 13:00:20 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 59ms (Views: 8.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/gritter/progress.png" for 127.0.0.1 at Sat Mar 19 13:00:21 +0100 2011
+
+ActionController::RoutingError (No route matches "/images/gritter/progress.png"):
+  
+
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 13:00:21 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 24ms (Views: 10.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/gritter/progress.png" for 127.0.0.1 at Sat Mar 19 13:00:21 +0100 2011
+
+ActionController::RoutingError (No route matches "/images/gritter/progress.png"):
+  
+
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 13:00:21 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 20ms (Views: 9.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/gritter/progress.png" for 127.0.0.1 at Sat Mar 19 13:00:21 +0100 2011
+
+ActionController::RoutingError (No route matches "/images/gritter/progress.png"):
+  
+
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 13:00:22 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 18ms (Views: 9.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/gritter/progress.png" for 127.0.0.1 at Sat Mar 19 13:00:22 +0100 2011
+
+ActionController::RoutingError (No route matches "/images/gritter/progress.png"):
+  
+
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 13:00:22 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 21ms (Views: 11.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/gritter/progress.png" for 127.0.0.1 at Sat Mar 19 13:00:22 +0100 2011
+
+ActionController::RoutingError (No route matches "/images/gritter/progress.png"):
+  
+
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 13:00:23 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (41.4ms)
+Completed 200 OK in 54ms (Views: 44.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/gritter/progress.png" for 127.0.0.1 at Sat Mar 19 13:00:23 +0100 2011
+
+ActionController::RoutingError (No route matches "/images/gritter/progress.png"):
+  
+
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 13:00:23 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 19ms (Views: 9.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/gritter/progress.png" for 127.0.0.1 at Sat Mar 19 13:00:24 +0100 2011
+
+ActionController::RoutingError (No route matches "/images/gritter/progress.png"):
+  
+
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 13:00:30 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 18ms (Views: 8.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/gritter/progress.png" for 127.0.0.1 at Sat Mar 19 13:00:30 +0100 2011
+
+ActionController::RoutingError (No route matches "/images/gritter/progress.png"):
+  
+
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 13:00:31 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 53ms (Views: 8.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 13:00:31 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 21ms (Views: 9.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 13:00:32 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 23ms (Views: 10.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 13:00:32 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 60ms (Views: 9.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 13:00:32 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 22ms (Views: 10.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 13:00:32 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 24ms (Views: 11.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 13:00:33 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 60ms (Views: 9.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 13:00:33 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 21ms (Views: 9.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 13:00:45 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 18ms (Views: 8.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 13:03:25 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 55ms (Views: 9.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 18:35:07 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 18ms (Views: 8.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 18:35:19 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 18ms (Views: 8.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 18:36:23 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 56ms (Views: 45.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 18:37:26 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 18ms (Views: 8.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 18:37:26 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 18ms (Views: 8.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 18:37:26 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (41.0ms)
+Completed 200 OK in 55ms (Views: 44.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 18:37:27 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 21ms (Views: 10.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 18:45:30 +0100 2011
+
+SyntaxError (/Users/romainbourgois/Documents/rails/stAugustin/app/controllers/user_sessions_controller.rb:13: syntax error, unexpected tASSOC, expecting kEND
+    render => :new
+             ^):
+  
+
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.7ms)
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (5.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 18:45:56 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 18ms (Views: 8.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 18:50:31 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 54ms (Views: 8.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/user_sessions" for 127.0.0.1 at Sat Mar 19 18:50:38 +0100 2011
+  Processing by UserSessionsController#create as HTML
+  Parameters: {"commit"=>"Se connecter", "user_session"=>{"login"=>"aaa", "password"=>"[FILTERED]"}, "authenticity_token"=>"qqUwaGh6w0ZPj92GpxwuOiFDG1WQy3Sbrv5FHPXk5xU=", "utf8"=>"✓"}
+  [1m[36mUser Load (7.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE (LOWER("users".login) = 'aaa') LIMIT 1[0m
+Completed   in 125ms
+
+Authlogic::Session::Existence::SessionInvalidError (Your session is invalid and has the following errors: Login is not valid):
+  app/controllers/user_sessions_controller.rb:9:in `create'
+
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.7ms)
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.0ms)
+Rendered /Users/romainbourgois/.gem/ruby/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (41.2ms)
+
+
+Started POST "/user_sessions" for 127.0.0.1 at Sat Mar 19 18:56:10 +0100 2011
+  Processing by UserSessionsController#create as HTML
+  Parameters: {"commit"=>"Se connecter", "user_session"=>{"login"=>"aaa", "password"=>"[FILTERED]"}, "authenticity_token"=>"qqUwaGh6w0ZPj92GpxwuOiFDG1WQy3Sbrv5FHPXk5xU=", "utf8"=>"✓"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE (LOWER("users".login) = 'aaa') LIMIT 1
+Redirected to http://localhost:3000/
+Completed 302 Found in 12ms
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 18:56:10 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 18ms (Views: 8.6ms | ActiveRecord: 7.5ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 18:56:11 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 59ms (Views: 49.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 18:56:13 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 17ms (Views: 8.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 18:56:13 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 18ms (Views: 8.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/user_sessions" for 127.0.0.1 at Sat Mar 19 18:56:22 +0100 2011
+  Processing by UserSessionsController#create as HTML
+  Parameters: {"commit"=>"Se connecter", "user_session"=>{"login"=>"aaa", "password"=>"[FILTERED]"}, "authenticity_token"=>"qqUwaGh6w0ZPj92GpxwuOiFDG1WQy3Sbrv5FHPXk5xU=", "utf8"=>"✓"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE (LOWER("users".login) = 'aaa') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 12ms
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 18:56:23 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 19ms (Views: 8.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 18:56:48 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 17ms (Views: 7.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Mar 19 18:56:49 +0100 2011
+  Processing by UserSessionsController#new as HTML
+Rendered user_sessions/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 18ms (Views: 8.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/user_sessions" for 127.0.0.1 at Sat Mar 19 18:56:51 +0100 2011
+  Processing by UserSessionsController#create as HTML
+  Parameters: {"commit"=>"Se connecter", "user_session"=>{"login"=>"aaa", "password"=>"[FILTERED]"}, "authenticity_token"=>"qqUwaGh6w0ZPj92GpxwuOiFDG1WQy3Sbrv5FHPXk5xU=", "utf8"=>"✓"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE (LOWER("users".login) = 'aaa') LIMIT 1
+Rendered user_sessions/new.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 19ms (Views: 8.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/user_sessions" for 127.0.0.1 at Sat Mar 19 18:57:07 +0100 2011
+  Processing by UserSessionsController#create as HTML
+  Parameters: {"commit"=>"Se connecter", "user_session"=>{"login"=>"aaa", "password"=>"[FILTERED]"}, "authenticity_token"=>"qqUwaGh6w0ZPj92GpxwuOiFDG1WQy3Sbrv5FHPXk5xU=", "utf8"=>"✓"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE (LOWER("users".login) = 'aaa') LIMIT 1[0m
+Rendered user_sessions/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 19ms (Views: 8.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/user_sessions" for 127.0.0.1 at Sun Mar 20 01:30:47 +0100 2011
+  Processing by UserSessionsController#create as HTML
+  Parameters: {"commit"=>"Se connecter", "user_session"=>{"login"=>"aaa", "password"=>"[FILTERED]"}, "authenticity_token"=>"qqUwaGh6w0ZPj92GpxwuOiFDG1WQy3Sbrv5FHPXk5xU=", "utf8"=>"✓"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE (LOWER("users".login) = 'aaa') LIMIT 1
+Rendered user_sessions/new.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 20ms (Views: 8.5ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/user_sessions" for 127.0.0.1 at Sun Mar 20 01:31:20 +0100 2011
+  Processing by UserSessionsController#create as HTML
+  Parameters: {"commit"=>"Se connecter", "user_session"=>{"login"=>"vgh", "password"=>"[FILTERED]"}, "authenticity_token"=>"qqUwaGh6w0ZPj92GpxwuOiFDG1WQy3Sbrv5FHPXk5xU=", "utf8"=>"✓"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE (LOWER("users".login) = 'vgh') LIMIT 1[0m
+Rendered user_sessions/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 19ms (Views: 8.4ms | ActiveRecord: 0.2ms)
