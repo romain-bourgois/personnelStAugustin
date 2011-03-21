@@ -17,6 +17,7 @@ StAugustin::Application.routes.draw do
   
   namespace :private do
     resource :user_sessions, :only => :destroy
+    resources :users, :only => [:edit, :update, :index]
   end
   
   # Sample resource route with options:

@@ -7,6 +7,7 @@ class ActiveSupport::TestCase
     user_session = UserSession.stubs :user => user
     UserSession.stubs(:new).with('login' => 'toto', 'password' => 'tata').returns(user_session)
     UserSession.stubs :find => user_session
+    @controller.stubs :current_user => user
     user_session
   end
   
