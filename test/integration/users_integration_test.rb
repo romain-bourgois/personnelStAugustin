@@ -30,4 +30,12 @@ class UsersIntegrationTest < ActionController::IntegrationTest
     assert_successful_path root_path
   end
 
+  def test_create_invalid
+    assert_no_difference "User.count" do
+        post_via_redirect users_path :user => { :login => 'toto'}
+    end
+    assert_template :new
+    assert_response :success
+  end
+
 end

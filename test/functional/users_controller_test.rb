@@ -45,5 +45,15 @@ class UsersControllerTest < ActionController::TestCase
                             }
     assert_redirected_to root_path
   end
+  
+  def test_create_invalid
+    user = User.new
+    User.expects :new => user
+    user.expects(:save!).raises(ActiveRecord::RecordInvalid.new(user))
+    User.expects :new => user
+    post :create, :user => {}
+    assert_response :success
+    assert_template :new
+  end
 
 end
