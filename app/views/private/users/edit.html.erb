@@ -1,5 +1,4 @@
-<%= simple_form_for [:private, @user] do |f| %>
-	<%= f.input :login, :label => 'login' %>
+<%= simple_form_for [:private, current_user] do |f| %>
 	<%= f.input :password, :label => 'Mot de passe'  %>
 	<%= f.input :password_confirmation, :label => 'Confirmez votre mot de passe'  %>
 	<%= f.input :email, :label => 'Email' %>

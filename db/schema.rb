@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110315234854) do
+ActiveRecord::Schema.define(:version => 20110320203836) do
 
   create_table "user_sessions", :force => true do |t|
     t.datetime "created_at"
@@ -29,6 +29,17 @@ ActiveRecord::Schema.define(:version => 20110315234854) do
     t.integer  "failed_login_count", :default => 0
     t.datetime "last_login_at"
     t.string   "last_login_ip"
+    t.string   "nom"
+    t.string   "prenom"
+    t.date     "date_de_naissance"
+    t.string   "lieu_de_naissance"
+    t.string   "nationalite"
+    t.text     "adresse"
+    t.string   "ville"
+    t.integer  "code_postal"
+    t.string   "pays"
+    t.string   "tel_portable"
+    t.string   "tel_fixe"
   end
 
 end

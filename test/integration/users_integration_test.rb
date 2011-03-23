@@ -35,7 +35,6 @@ class UsersIntegrationTest < ActionController::IntegrationTest
         post_via_redirect users_path :user => { :login => 'toto'}
     end
     assert_template :new
-    assert_response :success
   end
 
 end
