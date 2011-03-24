@@ -8,7 +8,6 @@ class Private::UsersController < Private::ApplicationController
     user.update_attributes! params[:user]
     redirect_to edit_private_user_path(user), :notice => 'Vous avez bien mis à jour votre profil'
   rescue ActiveRecord::RecordInvalid
-    p user.errors.full_messages
     flash.now[:error] = user.errors.full_messages.first.to_s
     render :edit
   end
