@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
     acts_as_authentic
     
+    belongs_to :user_droit
+    
     validates_presence_of :login
     validates_presence_of :email
     validates_uniqueness_of :login

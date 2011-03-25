@@ -1,0 +1,6 @@
+<h1>Créer un nouveau droit</h1>
+<%= simple_form_for [:admin, @user_droit] do |f| %>
+	<%= f.input :intitule, :label => 'nom public du droit' %>
+	<%= f.input :code_inchangeable, :label => 'Code unique non_changeable'  %>
+	<%= f.button :submit, 'Sauvegarder' %>
+<% end %>

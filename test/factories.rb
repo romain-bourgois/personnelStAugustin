@@ -16,3 +16,8 @@ Factory.define :user do |u|
   u.tel_portable '0629450203'
   u.tel_fixe '0139517190'
 end
+
+Factory.define :user_droit do |ud|
+  ud.intitule 'administrateur'
+  ud.code_inchangeable 'admin'
+end

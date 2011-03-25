@@ -20,6 +20,10 @@ StAugustin::Application.routes.draw do
     resources :users, :only => [:edit, :update, :index]
   end
   
+  namespace :admin do
+    resources :user_droits, :only => [:new, :create, :index]
+  end
+  
   # Sample resource route with options:
   #   resources :products do
   #     member do

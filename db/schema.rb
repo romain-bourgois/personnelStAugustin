@@ -10,7 +10,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110320203836) do
+ActiveRecord::Schema.define(:version => 20110324223349) do
+
+  create_table "user_droits", :force => true do |t|
+    t.string   "intitule"
+    t.string   "code_inchangeable"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "user_sessions", :force => true do |t|
     t.datetime "created_at"
@@ -40,6 +47,7 @@ ActiveRecord::Schema.define(:version => 20110320203836) do
     t.string   "pays"
     t.string   "tel_portable"
     t.string   "tel_fixe"
+    t.integer  "user_droit_id"
   end
 
 end

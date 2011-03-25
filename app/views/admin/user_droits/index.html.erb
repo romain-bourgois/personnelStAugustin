@@ -1,0 +1,21 @@
+<h1>Liste des droits</h1>
+<table>
+	<tr>
+		<td>
+			intitulé
+		</td>
+		<td>
+			code inchangeable
+		</td>
+	</tr>
+	<% @user_droits.each do |user_droit| %>
+	<tr>
+		<td>
+			<%= user_droit.intitule %>
+		</td>
+		<td>
+			<%= user_droit.code_inchangeable %>
+		</td>
+	</tr>
+	<% end %>
+</table>
