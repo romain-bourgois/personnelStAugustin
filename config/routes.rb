@@ -14,6 +14,7 @@ StAugustin::Application.routes.draw do
   #   resources :products
   resource :user_sessions, :only => [:new, :create]
   resources :users, :only => [:new, :create]
+  resources :sites
   
   namespace :private do
     resource :user_sessions, :only => :destroy
@@ -23,6 +24,8 @@ StAugustin::Application.routes.draw do
   namespace :admin do
     resources :user_droits, :only => [:new, :create, :index]
   end
+  
+  root :to => "sites#index"
   
   # Sample resource route with options:
   #   resources :products do
@@ -60,7 +63,7 @@ StAugustin::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   # root :to => "welcome#index"
-  root :to => "user_sessions#new"
+  
 
   # See how all your routes lay out with "rake routes"
 

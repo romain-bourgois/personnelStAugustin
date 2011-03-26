@@ -1,4 +1,5 @@
 <h1>Créer un nouveau droit</h1>
+<%= link_to 'revenir à la liste des droits', admin_user_droits_path %>
 <%= simple_form_for [:admin, @user_droit] do |f| %>
 	<%= f.input :intitule, :label => 'nom public du droit' %>
 	<%= f.input :code_inchangeable, :label => 'Code unique non_changeable'  %>
