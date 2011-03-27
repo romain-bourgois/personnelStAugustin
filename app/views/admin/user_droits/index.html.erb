@@ -5,7 +5,7 @@
 		<td>
 			intitulé
 		</td>
-		<td>
+		<td colspan='4'>
 			code inchangeable
 		</td>
 	</tr>
@@ -16,6 +16,9 @@
 		</td>
 		<td>
 			<%= user_droit.code_inchangeable %>
+		</td>
+		<td>
+			<%= link_to 'editer', edit_admin_user_droit_path(user_droit) %>
 		</td>
 	</tr>
 	<% end %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110324223349) do
+ActiveRecord::Schema.define(:version => 20110326163402) do
 
   create_table "user_droits", :force => true do |t|
     t.string   "intitule"
@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(:version => 20110324223349) do
     t.string   "pays"
     t.string   "tel_portable"
     t.string   "tel_fixe"
-    t.integer  "user_droit_id"
+    t.integer  "user_droit_id",      :default => 2
   end
 
 end

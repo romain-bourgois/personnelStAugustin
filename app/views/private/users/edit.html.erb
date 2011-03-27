@@ -1,3 +1,4 @@
+<h1><%= current_user.prenom %>, vous pouvez modifier votre profil ici</h1>
 <%= simple_form_for [:private, current_user] do |f| %>
 	<%= f.input :password, :label => 'Mot de passe'  %>
 	<%= f.input :password_confirmation, :label => 'Confirmez votre mot de passe'  %>

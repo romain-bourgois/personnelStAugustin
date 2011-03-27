@@ -18,6 +18,14 @@ Factory.define :user do |u|
 end
 
 Factory.define :user_droit do |ud|
-  ud.intitule 'administrateur'
-  ud.code_inchangeable 'admin'
+  ud.intitule {Factory.next :intitule}
+  ud.code_inchangeable {Factory.next :code_inchangeable}
+end
+
+Factory.sequence :intitule do |n|
+  "intitule#{n}"
+end
+
+Factory.sequence :code_inchangeable do |n|
+  "code_inchangeable#{n}"
 end

@@ -1,0 +1,6 @@
+<%= link_to 'revenir à la liste des droits', admin_user_droits_path %>
+<%= simple_form_for [:admin, @user_droit] do |f| %>
+	<%= f.input :intitule, :label => 'nom public du droit' %>
+	<%= f.input :code_inchangeable, :label => 'Code unique non changeable' unless action_name == 'edit' || action_name == 'update' %>
+	<%= f.button :submit, 'Sauvegarder' %>
+<% end %>
