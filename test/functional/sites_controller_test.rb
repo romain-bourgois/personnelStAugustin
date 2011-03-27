@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class SitesControllerTest < ActionController::TestCase     
+class PagesControllerTest < ActionController::TestCase     
 
   def test_index
     get :index

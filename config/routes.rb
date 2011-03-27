@@ -14,7 +14,7 @@ StAugustin::Application.routes.draw do
   #   resources :products
   resource :user_sessions, :only => [:new, :create]
   resources :users, :only => [:new, :create]
-  resources :sites
+  resources :pages
   
   namespace :private do
     resource :user_sessions, :only => :destroy
@@ -25,7 +25,7 @@ StAugustin::Application.routes.draw do
     resources :user_droits, :only => [:new, :create, :index, :edit, :update]
   end
   
-  root :to => "sites#index"
+  root :to => "pages#index"
   
   # Sample resource route with options:
   #   resources :products do
