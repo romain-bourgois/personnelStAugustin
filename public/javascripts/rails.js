@@ -126,6 +126,7 @@
 
 
   document.on("click", "*[data-confirm]", function(event, element) {
+	jQuery.noConflict();
     var message = element.readAttribute('data-confirm');
     if (!confirm(message)) event.stop();
   });
