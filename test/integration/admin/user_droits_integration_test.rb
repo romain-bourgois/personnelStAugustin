@@ -73,5 +73,11 @@ class Admin::UserDroitsIntegrationTest < ActionController::IntegrationTest
     assert_equal assigns(:user_droit), user_droit.reload
     assert_template :edit
   end
+  
+  def test_destroy
+    user_droit = Factory :user_droit
+    delete_via_redirect admin_user_droit_path :id => user_droit
+    assert_response :success
+  end
 
 end

@@ -80,5 +80,14 @@ class Admin::UserDroitsControllerTest < ActionController::TestCase
     assert_template :edit
     assert_equal droit, assigns(:user_droit)
   end
+  
+  def test_destroy
+    droit = UserDroit.new :intitule => 'tata', :code_inchangeable => 'toto'
+    droit.stubs :id => 23
+    UserDroit.expects(:find).with(droit).returns droit
+    droit.expects(:delete)
+    put :destroy, :id => droit
+    assert_redirected_to admin_user_droits_path
+  end
 
 end

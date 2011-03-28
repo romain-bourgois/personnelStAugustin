@@ -37,5 +37,11 @@ class Admin::UserDroitsController < Admin::ApplicationController
     flash.now[:error] = 'Vous avez mal rempli le champ. Pour rappel, il ne peut pas être vide et ne doit pas porter un intitulé déjà existant.'
     render :edit
   end
+  
+  def destroy
+    user_droit = UserDroit.find params[:id]
+    user_droit.delete
+    redirect_to admin_user_droits_path
+  end
 
 end

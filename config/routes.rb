@@ -22,7 +22,7 @@ StAugustin::Application.routes.draw do
   end
   
   namespace :admin do
-    resources :user_droits, :only => [:new, :create, :index, :edit, :update]
+    resources :user_droits, :only => [:new, :create, :index, :edit, :update, :destroy]
   end
   
   root :to => "pages#index"
