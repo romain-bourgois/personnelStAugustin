@@ -21,7 +21,7 @@
 			<%= link_to 'editer', edit_admin_user_droit_path(user_droit) %>
 		</td>
 		<td>
-			<%= button_to "Supprimer", admin_user_droit_path(user_droit), :method => :delete, :confirm => 'Etes-vous sûr?' %>
+			<%= button_to "Supprimer", admin_user_droit_path(user_droit), :method => :delete, :confirm => "La suppression du droit #{user_droit.intitule} donnera le droit par défaut à tous les utilisateurs ayant le droit #{user_droit.intitule}. Voulez-vous continuer?" %>
 		</td>
 	</tr>
 	<% end %>

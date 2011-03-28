@@ -1,7 +1,7 @@
 Factory.define :user do |u|
   u.login 'bob'
   u.password 'aaaa'
-  u.email 'rbourgoi@isep.fr'
+  u.email {Factory.next :email}
   u.password_confirmation 'aaaa'
   u.persistence_token ""
   u.nom 'Bourgois'
@@ -24,6 +24,10 @@ end
 
 Factory.sequence :intitule do |n|
   "intitule#{n}"
+end
+
+Factory.sequence :email do |n|
+  "toto#{n}@toto.com"
 end
 
 Factory.sequence :code_inchangeable do |n|

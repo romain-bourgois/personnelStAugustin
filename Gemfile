@@ -9,7 +9,7 @@ gem 'sqlite3'
 gem "authlogic"
 gem "simple_form"
 gem "gritter"
-
+gem "meta_where"
 
 # Use unicorn as the web server
 # gem 'unicorn'

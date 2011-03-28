@@ -75,9 +75,18 @@ class Admin::UserDroitsIntegrationTest < ActionController::IntegrationTest
   end
   
   def test_destroy
-    user_droit = Factory :user_droit
-    delete_via_redirect admin_user_droit_path :id => user_droit
+    droit_default = Factory :user_droit, :code_inchangeable => 'mono'
+    droit_user = Factory :user_droit
+    user = Factory :user, :user_droit => droit_user
+    delete_via_redirect admin_user_droit_path :id => droit_user
     assert_response :success
+    assert_equal droit_default, user.reload.user_droit
+  end
+  
+  def test_destroy_record_not_found
+    delete_via_redirect admin_user_droit_path :id => 123
+    assert_response :success
+    assert_successful_path admin_user_droits_path
   end
 
 end

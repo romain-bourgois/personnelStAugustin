@@ -17,8 +17,4 @@ class ActiveSupport::TestCase
     @controller.current_user.stubs :id => 1
     user_session
   end
-  
-
-  
-  
 end

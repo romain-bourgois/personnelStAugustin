@@ -82,11 +82,27 @@ class Admin::UserDroitsControllerTest < ActionController::TestCase
   end
   
   def test_destroy
+    UserDroit.stubs(:find_by_code_inchangeable).with('admin')
+    
     droit = UserDroit.new :intitule => 'tata', :code_inchangeable => 'toto'
     droit.stubs :id => 23
     UserDroit.expects(:find).with(droit).returns droit
-    droit.expects(:delete)
+    
+    droit_par_default = UserDroit.new :intitule => 'moniteur', :code_inchangeable => 'mono'
+    droit_par_default.stubs :id => 21
+    UserDroit.expects(:find_by_code_inchangeable).with('mono').returns droit_par_default
+    
+    user_nouveau = User.new :user_droit => droit
+    User.expects(:where).with(:user_droit_id =>  droit.id).returns [user_nouveau]
+    user_nouveau.expects(:update_attribute).with(:user_droit, droit_par_default)
+    droit.expects :delete
     put :destroy, :id => droit
+    assert_redirected_to admin_user_droits_path
+  end
+  
+  def test_destroy_record_not_found
+    UserDroit.expects(:find).with(123).raises ActiveRecord::RecordNotFound
+    put :destroy, :id => 123
     assert_redirected_to admin_user_droits_path
   end
 
