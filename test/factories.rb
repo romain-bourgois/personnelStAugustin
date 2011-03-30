@@ -1,5 +1,5 @@
 Factory.define :user do |u|
-  u.login 'bob'
+  u.login {Factory.next :login}
   u.password 'aaaa'
   u.email {Factory.next :email}
   u.password_confirmation 'aaaa'
@@ -20,6 +20,10 @@ end
 Factory.define :user_droit do |ud|
   ud.intitule {Factory.next :intitule}
   ud.code_inchangeable {Factory.next :code_inchangeable}
+end
+
+Factory.sequence :login do |n|
+  "login#{n}"
 end
 
 Factory.sequence :intitule do |n|

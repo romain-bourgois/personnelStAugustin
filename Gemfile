@@ -10,6 +10,8 @@ gem "authlogic"
 gem "simple_form"
 gem "gritter"
 gem "meta_where"
+gem "meta_search"
+gem "will_paginate", "~> 3.0.pre2"
 
 # Use unicorn as the web server
 # gem 'unicorn'
