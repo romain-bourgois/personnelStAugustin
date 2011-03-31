@@ -39,4 +39,13 @@ class Admin::UsersControllerTest < ActionController::TestCase
     assert_redirected_to admin_users_path
   end
   
+  def test_update
+    user_a_updater = User.new :nom => 'tata', :prenom => 'toto'
+    user_a_updater.stubs :id => 1
+    User.expects(:find).with(user_a_updater).returns user_a_updater
+    user_a_updater.expects(:update_attributes!).with('nom' => 'nouveau nom')
+    put :update, :id => user_a_updater, :user => {:nom => 'nouveau nom'}
+    assert_redirected_to edit_admin_user_path(user_a_updater)
+  end
+  
 end

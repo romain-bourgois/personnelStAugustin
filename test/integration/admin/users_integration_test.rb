@@ -27,5 +27,12 @@ class Admin::UsersIntegrationTest < ActionController::IntegrationTest
     get_via_redirect edit_admin_user_path(12)
     assert_successful_path admin_users_path
   end
+  
+  def test_update
+    user_a_updater = Factory :user
+    put_via_redirect admin_user_path :id => user_a_updater, :user => {:nom => 'nouveau_nom'}
+    assert_successful_path edit_admin_user_path(user_a_updater)
+    assert_equal 'nouveau_nom', user_a_updater.reload.nom
+  end
 
 end

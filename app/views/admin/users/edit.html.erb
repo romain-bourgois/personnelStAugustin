@@ -1,0 +1,19 @@
+<h1>Mettez à jour l'utilisateur <%= @user.nom %></h1>
+<%= simple_form_for [:admin, @user] do |f| %>
+	<%= f.input :login, :label => 'login' %>
+	<%= f.input :password, :label => 'Mot de passe'  %>
+	<%= f.input :password_confirmation, :label => 'Confirmez votre mot de passe'  %>
+	<%= f.input :email, :label => 'Email' %>
+	<%= f.input :nom, :label => 'Nom' %>
+	<%= f.input :prenom, :label => 'Prénom' %>
+	<%= f.input :date_de_naissance, :label => 'Date de naissance' %>
+	<%= f.input :lieu_de_naissance, :label => 'Lieu de naissance' %>
+	<%= f.input :nationalite, :label => 'Nationalité' %>
+	<%= f.input :adresse, :label => 'Adresse' %>
+	<%= f.input :code_postal, :label => 'Code postal' %>
+	<%= f.input :ville, :label => 'Ville' %>
+	<%= f.input :pays, :label => 'Pays' %>
+	<%= f.input :tel_portable, :label => 'Tel portable' %>
+	<%= f.input :tel_fixe, :label => 'Tel fixe' %>
+	<%= f.button :submit, 'Sauvegarder' %>
+<% end %>
