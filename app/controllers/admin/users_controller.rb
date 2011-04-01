@@ -7,15 +7,23 @@ class Admin::UsersController < Admin::ApplicationController
   
   def edit
     @user = User.find params[:id]
+    @user_droits = UserDroit.all
   rescue ActiveRecord::RecordNotFound
     flash[:error] = 'L\'utilisateur est introuvable'
     redirect_to admin_users_path
   end
   
   def update
-    user = User.find params[:id]
-    user.update_attributes! params[:user]
-    redirect_to edit_admin_user_path(user), :notice => 'Vous avez bien mis à jour l\'utilisateur ' + user.prenom + ' ' + user.nom
+    @user = User.find params[:id]
+    @user.update_attributes! params[:user]
+    redirect_to edit_admin_user_path(@user), :notice => 'Vous avez bien mis à jour l\'utilisateur ' + @user.prenom + ' ' + @user.nom
+  rescue ActiveRecord::RecordNotFound
+    flash[:error] = 'L\'utilisateur est introuvable'
+    redirect_to admin_users_path
+  rescue ActiveRecord::RecordInvalid
+    flash.now[:error] = @user.errors.full_messages.first
+    @user_droits = UserDroit.all
+    render :edit
   end
 
 end

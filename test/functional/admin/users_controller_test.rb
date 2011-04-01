@@ -31,6 +31,7 @@ class Admin::UsersControllerTest < ActionController::TestCase
     get :edit, :id => user_a_editer
     assert_response :success
     assert assigns(:user)
+    assert assigns(:user_droits)
   end
   
   def test_edit_ne_trouve_pas_le_user
@@ -46,6 +47,23 @@ class Admin::UsersControllerTest < ActionController::TestCase
     user_a_updater.expects(:update_attributes!).with('nom' => 'nouveau nom')
     put :update, :id => user_a_updater, :user => {:nom => 'nouveau nom'}
     assert_redirected_to edit_admin_user_path(user_a_updater)
+  end
+  
+  def test_update_redirige_vers_index_si_user_pas_trouve
+    User.expects(:find).with(12).raises ActiveRecord::RecordNotFound
+    put :update, :id => 12, :user => {:nom => 'nouveau nom'}
+    assert_redirected_to admin_users_path
+  end
+  
+  def test_update_rend_edit_si_mauvais_enregistrement
+    user_a_updater = User.new
+    user_a_updater.stubs :id => 1
+    User.expects(:find).with(user_a_updater).returns user_a_updater
+    user_a_updater.expects(:update_attributes!).with('nom' => '').raises ActiveRecord::RecordInvalid.new(user_a_updater)
+    put :update, :id => user_a_updater, :user => {:nom => ''}
+    assert_template :edit
+    assert assigns(:user)
+    assert assigns(:user_droits)
   end
   
 end

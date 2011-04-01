@@ -21,6 +21,7 @@ class Admin::UsersIntegrationTest < ActionController::IntegrationTest
     get_via_redirect edit_admin_user_path(user_a_editer)
     assert_successful_path edit_admin_user_path(user_a_editer)
     assert assigns(:user)
+    assert assigns(:user_droits)
   end
   
   def test_edit_ne_trouve_pas_le_user
@@ -33,6 +34,20 @@ class Admin::UsersIntegrationTest < ActionController::IntegrationTest
     put_via_redirect admin_user_path :id => user_a_updater, :user => {:nom => 'nouveau_nom'}
     assert_successful_path edit_admin_user_path(user_a_updater)
     assert_equal 'nouveau_nom', user_a_updater.reload.nom
+  end
+  
+  def test_update_redirige_vers_index_si_user_pas_trouve
+    put_via_redirect admin_user_path :id => 12, :user => {:nom => 'nouveau_nom'}
+    assert_successful_path admin_users_path
+  end
+  
+  def test_update_rend_edit_si_mauvais_enregistrement
+    user_a_updater = Factory :user
+    put_via_redirect admin_user_path :id => user_a_updater, :user => {:nom => ''}
+    assert_template :edit
+    assert_not_equal '', user_a_updater.reload.nom
+    assert assigns(:user)
+    assert assigns(:user_droits)
   end
 
 end

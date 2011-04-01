@@ -1,4 +1,5 @@
 <h1>Mettez à jour l'utilisateur <%= @user.nom %></h1>
+<%= link_to 'retourner à la liste des users', admin_users_path %>
 <%= simple_form_for [:admin, @user] do |f| %>
 	<%= f.input :login, :label => 'login' %>
 	<%= f.input :password, :label => 'Mot de passe'  %>
@@ -15,5 +16,6 @@
 	<%= f.input :pays, :label => 'Pays' %>
 	<%= f.input :tel_portable, :label => 'Tel portable' %>
 	<%= f.input :tel_fixe, :label => 'Tel fixe' %>
+	<%= collection_select :user, :user_droit_id, @user_droits, :id, :intitule %>
 	<%= f.button :submit, 'Sauvegarder' %>
 <% end %>
