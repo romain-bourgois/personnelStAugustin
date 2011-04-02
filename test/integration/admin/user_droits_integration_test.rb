@@ -78,8 +78,10 @@ class Admin::UserDroitsIntegrationTest < ActionController::IntegrationTest
     droit_default = Factory :user_droit, :code_inchangeable => 'mono'
     droit_user = Factory :user_droit
     user = Factory :user, :user_droit => droit_user
-    delete_via_redirect admin_user_droit_path :id => droit_user
-    assert_response :success
+    assert_difference 'UserDroit.count', -1 do
+      delete_via_redirect admin_user_droit_path :id => droit_user
+    end
+    assert_successful_path admin_user_droits_path
     assert_equal droit_default, user.reload.user_droit
   end
   

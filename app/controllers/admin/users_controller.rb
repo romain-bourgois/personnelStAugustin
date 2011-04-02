@@ -25,5 +25,14 @@ class Admin::UsersController < Admin::ApplicationController
     @user_droits = UserDroit.all
     render :edit
   end
+  
+  def destroy
+    user_a_supprimer = User.find params[:id]
+    user_a_supprimer.destroy
+    redirect_to admin_users_path, :notice => 'Vous avez bien supprimé l\'utilisateur'
+  rescue ActiveRecord::RecordNotFound
+    flash[:error] = 'L\'utilisateur que vous voulez supprimer est introuvable'
+    redirect_to admin_users_path
+  end
 
 end

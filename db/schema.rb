@@ -10,7 +10,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110326163402) do
+ActiveRecord::Schema.define(:version => 20110402125800) do
+
+  create_table "type_sejours", :force => true do |t|
+    t.string "intitule"
+    t.string "code_inchangeable"
+  end
 
   create_table "user_droits", :force => true do |t|
     t.string   "intitule"

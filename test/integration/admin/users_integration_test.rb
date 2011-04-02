@@ -49,5 +49,20 @@ class Admin::UsersIntegrationTest < ActionController::IntegrationTest
     assert assigns(:user)
     assert assigns(:user_droits)
   end
+  
+  def test_destroy
+    user = Factory :user
+    assert_difference 'User.count', -1 do
+      delete_via_redirect admin_user_path :id => user
+    end
+    assert_successful_path admin_users_path
+  end
+
+  def test_destroy_ne_trouve_pas_redirige
+    assert_no_difference 'User.count' do
+      delete_via_redirect admin_user_path :id => 123
+    end
+    assert_successful_path admin_users_path
+  end
 
 end

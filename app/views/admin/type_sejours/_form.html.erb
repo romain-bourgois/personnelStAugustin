@@ -1,0 +1,6 @@
+<%= link_to 'revenir à la liste des types de séjour', admin_type_sejours_path %>
+<%= simple_form_for [:admin, @type_sejour] do |f| %>
+	<%= f.input :intitule, :label => 'intitule' %>
+	<%= f.input :code_inchangeable, :label => 'Code unique non changeable' unless action_name == 'edit' || action_name == 'update' %>
+	<%= f.button :submit, 'Sauvegarder' %>
+<% end %>

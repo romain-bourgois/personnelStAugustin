@@ -16,6 +16,6 @@
 	<%= f.input :pays, :label => 'Pays' %>
 	<%= f.input :tel_portable, :label => 'Tel portable' %>
 	<%= f.input :tel_fixe, :label => 'Tel fixe' %>
-	<%= collection_select :user, :user_droit_id, @user_droits, :id, :intitule %>
+	<%= collection_select :user, :user_droit_id, @user_droits, :id, :intitule unless @user == current_user %>
 	<%= f.button :submit, 'Sauvegarder' %>
 <% end %>

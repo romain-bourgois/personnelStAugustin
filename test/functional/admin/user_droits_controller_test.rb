@@ -96,7 +96,7 @@ class Admin::UserDroitsControllerTest < ActionController::TestCase
     User.expects(:where).with(:user_droit_id =>  droit.id).returns [user_nouveau]
     user_nouveau.expects(:update_attribute).with(:user_droit, droit_par_default)
     droit.expects :delete
-    put :destroy, :id => droit
+    delete :destroy, :id => droit
     assert_redirected_to admin_user_droits_path
   end
   

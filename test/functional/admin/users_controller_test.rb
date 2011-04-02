@@ -66,4 +66,17 @@ class Admin::UsersControllerTest < ActionController::TestCase
     assert assigns(:user_droits)
   end
   
+  def test_destroy
+    user_a_supprimer = User.new
+    user_a_supprimer.stubs :id => 1
+    User.stubs(:find).with(user_a_supprimer).returns user_a_supprimer
+    user_a_supprimer.expects :destroy
+    delete :destroy, :id => user_a_supprimer
+  end
+
+  def test_destroy_ne_trouve_pas_redirige
+    User.stubs(:find).with(1).raises ActiveRecord::RecordNotFound
+    delete :destroy, :id => 1
+  end
+
 end
