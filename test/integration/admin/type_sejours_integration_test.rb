@@ -20,5 +20,19 @@ class Admin::TypeSejoursIntegrationTest < ActionController::IntegrationTest
     assert_successful_path new_admin_type_sejour_path
     assert assigns(:type_sejour)
   end
+  
+  def test_create
+    assert_difference 'TypeSejour.count' do
+      post_via_redirect admin_type_sejours_path(:type_sejour => {:intitule => 'toto', :code_inchangeable => 'tata'})
+    end
+    assert_successful_path admin_type_sejours_path
+  end
+  
+  def test_create_invalid
+    assert_no_difference 'TypeSejour.count' do
+      post_via_redirect admin_type_sejours_path(:type_sejour => {:intitule => '', :code_inchangeable => 'tata'})
+    end
+    assert_template :new
+  end
 
 end

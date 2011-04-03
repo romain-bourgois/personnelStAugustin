@@ -22,6 +22,11 @@ Factory.define :user_droit do |ud|
   ud.code_inchangeable {Factory.next :code_inchangeable}
 end
 
+Factory.define :type_sejour do |ts|
+  ts.intitule {Factory.next :intitule}
+  ts.code_inchangeable {Factory.next :code_inchangeable}
+end
+
 Factory.sequence :login do |n|
   "login#{n}"
 end
