@@ -38,5 +38,14 @@ class Admin::TypeSejoursController < Admin::ApplicationController
     flash.now[:error] = 'Vous ne pouvez pas modifier le code inchangeable...'
     render :edit
   end
-
+  
+  def destroy
+    type_a_supprimer = TypeSejour.find params[:id]
+    type_a_supprimer.destroy
+    redirect_to admin_type_sejours_path, :notice => 'Vous avez correctement supprimé le type de séjour'
+  rescue ActiveRecord::RecordNotFound
+    flash[:error] = 'Type de séjour introuvable'
+    redirect_to [:admin, :type_sejours]
+  end
+  
 end

@@ -88,5 +88,20 @@ class Admin::TypeSejoursControllerTest < ActionController::TestCase
     assert_template :edit
     assert assigns(:type_sejour)
   end
+  
+  def test_destroy
+    type_sejour_a_supprimer = TypeSejour.new
+    TypeSejour.stubs(:find).with(type_sejour_a_supprimer).returns type_sejour_a_supprimer
+    type_sejour_a_supprimer.stubs :id => 1
+    type_sejour_a_supprimer.expects :destroy
+    delete :destroy, :id => type_sejour_a_supprimer 
+    assert_redirected_to admin_type_sejours_path
+  end
+  
+  def test_destroy_ne_trouve_pas
+    TypeSejour.stubs(:find).with(1).raises ActiveRecord::RecordNotFound
+    delete :destroy, :id => 1 
+    assert_redirected_to admin_type_sejours_path
+  end
 
 end

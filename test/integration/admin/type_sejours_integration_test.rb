@@ -74,5 +74,20 @@ class Admin::TypeSejoursIntegrationTest < ActionController::IntegrationTest
     assert_template :edit
     assert assigns(:type_sejour)
   end
+  
+  def test_destroy
+    type_sejour_a_supprimer = Factory :type_sejour
+    assert_difference 'TypeSejour.count', -1 do
+      delete_via_redirect admin_type_sejour_path :id => type_sejour_a_supprimer
+    end
+    assert_successful_path admin_type_sejours_path
+  end
+  
+  def test_destroy_ne_trouve_pas
+    assert_no_difference 'TypeSejour.count' do
+      delete_via_redirect admin_type_sejour_path :id => 123
+    end
+    assert_successful_path admin_type_sejours_path
+  end
 
 end
