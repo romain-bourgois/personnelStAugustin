@@ -66,17 +66,35 @@ class Admin::UsersControllerTest < ActionController::TestCase
     assert assigns(:user_droits)
   end
   
+  def test_update_rend_edit_si_on_essaye_de_modifier_le_role_de_l_admin_connecte
+    User.stubs(:find).with(@controller.current_user).returns @controller.current_user
+    @controller.current_user.expects(:destroy).never
+    put :update, :id => @controller.current_user, :user => {:user_droit_id => 15}
+    assert_template :edit
+    assert assigns(:user)
+    assert assigns(:user_droits)
+  end
+  
   def test_destroy
     user_a_supprimer = User.new
     user_a_supprimer.stubs :id => 1
     User.stubs(:find).with(user_a_supprimer).returns user_a_supprimer
     user_a_supprimer.expects :destroy
     delete :destroy, :id => user_a_supprimer
+    assert_redirected_to admin_users_path
   end
 
   def test_destroy_ne_trouve_pas_redirige
     User.stubs(:find).with(1).raises ActiveRecord::RecordNotFound
     delete :destroy, :id => 1
+    assert_redirected_to admin_users_path
+  end
+  
+  def test_destroy_ne_detruit_pas_le_user_admin_en_cours
+    User.stubs(:find).with(@controller.current_user).returns @controller.current_user
+    @controller.current_user.expects(:destroy).never
+    delete :destroy, :id => @controller.current_user
+    assert_redirected_to admin_users_path
   end
 
 end

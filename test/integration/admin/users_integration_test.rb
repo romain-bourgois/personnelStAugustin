@@ -50,6 +50,14 @@ class Admin::UsersIntegrationTest < ActionController::IntegrationTest
     assert assigns(:user_droits)
   end
   
+  def test_update_rend_edit_si_on_essaye_de_modifier_le_role_de_l_admin_connecte
+    put_via_redirect admin_user_path :id => @user, :user => {:user_droit_id => 15}
+    assert_template :edit
+    assert_equal 'admin', @user.user_droit.code_inchangeable
+    assert assigns(:user)
+    assert assigns(:user_droits)
+  end
+  
   def test_destroy
     user = Factory :user
     assert_difference 'User.count', -1 do
@@ -61,6 +69,13 @@ class Admin::UsersIntegrationTest < ActionController::IntegrationTest
   def test_destroy_ne_trouve_pas_redirige
     assert_no_difference 'User.count' do
       delete_via_redirect admin_user_path :id => 123
+    end
+    assert_successful_path admin_users_path
+  end
+  
+  def test_destroy_ne_detruit_pas_le_user_admin_en_cours
+    assert_no_difference 'User.count' do
+      delete_via_redirect admin_user_path :id => @user
     end
     assert_successful_path admin_users_path
   end
