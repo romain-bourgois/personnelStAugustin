@@ -34,5 +34,45 @@ class Admin::TypeSejoursIntegrationTest < ActionController::IntegrationTest
     end
     assert_template :new
   end
+  
+  def test_edit
+    type_sejour = Factory :type_sejour
+    get_via_redirect edit_admin_type_sejour_path(type_sejour)
+    assert_template :edit
+    assert assigns(:type_sejour)
+  end
+  
+  def test_edit_ne_trouve_pas
+    get_via_redirect edit_admin_type_sejour_path(1)
+    assert_successful_path admin_type_sejours_path
+  end
+  
+  def test_update
+    type_sejour = Factory :type_sejour
+    put_via_redirect admin_type_sejour_path :id => type_sejour, :type_sejour => {:intitule => 'update'}
+    assert_equal 'update', type_sejour.reload.intitule
+    assert_successful_path admin_type_sejours_path
+  end
+  
+  def test_update_ne_trouve_pas
+    put_via_redirect admin_type_sejour_path :id => 1
+    assert_successful_path admin_type_sejours_path
+  end
+  
+  def test_update_invalid
+    type_sejour = Factory :type_sejour
+    put_via_redirect admin_type_sejour_path :id => type_sejour, :type_sejour => {:intitule => ''}
+    assert_not_equal '', type_sejour.reload.intitule
+    assert_template :edit
+    assert assigns(:type_sejour)
+  end
+  
+  def test_update_change_code_inchangeable_rend_edit
+    type_sejour = Factory :type_sejour
+    put_via_redirect admin_type_sejour_path :id => type_sejour, :type_sejour => {:code_inchangeable => 'totototo'}
+    assert_not_equal 'totototo', type_sejour.reload.code_inchangeable
+    assert_template :edit
+    assert assigns(:type_sejour)
+  end
 
 end

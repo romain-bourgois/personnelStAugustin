@@ -4,8 +4,8 @@ class Admin::UserDroitsIntegrationTest < ActionController::IntegrationTest
 
   def setup
     user = log_in_a_user_integration
-    droit_admin = Factory :user_droit, :intitule => 'administrateur', :code_inchangeable => 'admin'
-    user.user_droit = droit_admin
+    @droit_admin = Factory :user_droit, :intitule => 'administrateur', :code_inchangeable => 'admin'
+    user.user_droit = @droit_admin
     user.save!
   end
 
@@ -74,6 +74,14 @@ class Admin::UserDroitsIntegrationTest < ActionController::IntegrationTest
     assert_template :edit
   end
   
+  def test_update_change_code_inchangeable_rend_edit
+    user_droit = Factory :user_droit
+    put_via_redirect admin_user_droit_path :id => user_droit, :user_droit => {:code_inchangeable => 'totototo'}
+    assert_not_equal 'totototo', user_droit.reload.code_inchangeable
+    assert_template :edit
+    assert assigns(:user_droit)
+  end
+  
   def test_destroy
     droit_default = Factory :user_droit, :code_inchangeable => 'mono'
     droit_user = Factory :user_droit
@@ -86,8 +94,25 @@ class Admin::UserDroitsIntegrationTest < ActionController::IntegrationTest
   end
   
   def test_destroy_record_not_found
-    delete_via_redirect admin_user_droit_path :id => 123
-    assert_response :success
+    assert_no_difference 'UserDroit.count' do
+      delete_via_redirect admin_user_droit_path :id => 123
+    end
+    assert_successful_path admin_user_droits_path
+  end
+  
+  def test_destroy_essaye_de_supprimer_admin
+    droit_default = Factory :user_droit, :code_inchangeable => 'mono'
+    assert_no_difference 'UserDroit.count' do
+      delete_via_redirect admin_user_droit_path :id => @droit_admin
+    end
+    assert_successful_path admin_user_droits_path
+  end
+  
+  def test_destroy_essaye_de_supprimer_mono
+    droit_default = Factory :user_droit, :code_inchangeable => 'mono'
+    assert_no_difference 'UserDroit.count' do
+      delete_via_redirect admin_user_droit_path :id => droit_default
+    end
     assert_successful_path admin_user_droits_path
   end
 

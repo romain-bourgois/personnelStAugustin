@@ -32,12 +32,12 @@ class Admin::UsersController < Admin::ApplicationController
   
   def destroy
     user_a_supprimer = User.find params[:id]
-    user_a_supprimer == current_user ? raise(ActiveRecord::RecordInvalid.new(user_a_supprimer)) : user_a_supprimer.destroy
+    user_a_supprimer == current_user ? raise(ActiveRecord::ActiveRecordError) : user_a_supprimer.destroy
     redirect_to admin_users_path, :notice => 'Vous avez bien supprimé l\'utilisateur'
   rescue ActiveRecord::RecordNotFound
     flash[:error] = 'L\'utilisateur que vous voulez supprimer est introuvable'
     redirect_to admin_users_path
-  rescue ActiveRecord::RecordInvalid
+  rescue ActiveRecord::ActiveRecordError
     flash[:error] = 'Vous essayez de supprimer votre propre utilisateur, vous ne pouvez pas faire cela!'
     redirect_to admin_users_path
   end

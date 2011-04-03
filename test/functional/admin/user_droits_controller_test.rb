@@ -71,7 +71,7 @@ class Admin::UserDroitsControllerTest < ActionController::TestCase
     assert_redirected_to admin_user_droits_path
   end
   
-  def test_update_pas_bonne_entree
+  def test_update_invalid
     droit = UserDroit.new :intitule => 'tata', :code_inchangeable => 'toto'
     droit.stubs :id => 23
     UserDroit.expects(:find).with(droit).returns droit
@@ -79,6 +79,16 @@ class Admin::UserDroitsControllerTest < ActionController::TestCase
     put :update, :id => droit, :user_droit => {:intitule => ''}
     assert_template :edit
     assert_equal droit, assigns(:user_droit)
+  end
+  
+  def test_update_change_code_inchangeable_rend_edit
+    droit = UserDroit.new :intitule => 'tata', :code_inchangeable => 'toto'
+    droit.stubs :id => 23
+    UserDroit.stubs(:find).with(droit).returns droit
+    droit.expects(:update_attributes!).with('code_inchangeable' => 'changé').never
+    put :update, :id => droit, :user_droit => {:code_inchangeable => 'changé'}
+    assert_template :edit
+    assert assigns(:user_droit)
   end
   
   def test_destroy
@@ -103,6 +113,31 @@ class Admin::UserDroitsControllerTest < ActionController::TestCase
   def test_destroy_record_not_found
     UserDroit.expects(:find).with(123).raises ActiveRecord::RecordNotFound
     put :destroy, :id => 123
+    assert_redirected_to admin_user_droits_path
+  end
+  
+  def test_destroy_essaye_de_supprimer_admin
+    UserDroit.stubs(:find_by_code_inchangeable).with('admin')
+    
+    droit_admin = UserDroit.new :intitule => 'administrateur', :code_inchangeable => 'admin'
+    droit_admin.stubs :id => 1
+    UserDroit.expects(:find).with(droit_admin).returns droit_admin
+    User.expects(:where).never
+    droit_admin.expects(:delete).never
+    delete :destroy, :id => droit_admin
+    assert_redirected_to admin_user_droits_path
+  end
+  
+  def test_destroy_essaye_de_supprimer_mono
+    UserDroit.stubs(:find_by_code_inchangeable).with('admin')
+    
+    droit_default = UserDroit.new :intitule => 'moniteur', :code_inchangeable => 'mono'
+    UserDroit.stubs(:find_by_code_inchangeable).with('mono').returns droit_default
+    droit_default.stubs :id => 1
+    
+    User.expects(:where).never
+    droit_default.expects(:delete).never
+    delete :destroy, :id => droit_default
     assert_redirected_to admin_user_droits_path
   end
 
