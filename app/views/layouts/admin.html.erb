@@ -14,17 +14,10 @@
 	        <%- end -%>  
 	<% end %>
 	
-	<div id="user_nav">
-	  <% if current_user %>
-		<%= "Bonjour #{current_user.prenom}"%>
-	    <%= link_to "Editer mon profil", edit_private_user_path(current_user.id) %>
-		<%= link_to "Accéder au back office", [:admin, :users] %>
-	    <%= button_to "Se déconnecter", private_user_sessions_path, :method => :delete %>
-	  <% else %>
-	    <%= link_to "S'inscrire", new_user_path %>
-		<%= link_to 'Se connecter', new_user_sessions_path %>
-	  <% end %>
+	<div id="admin_menu">
+		<%= render 'admin/menu/menu' %>
 	</div>
+	
 <%= yield %>
 
 </body>

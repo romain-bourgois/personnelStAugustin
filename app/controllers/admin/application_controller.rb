@@ -1,4 +1,5 @@
 class Admin::ApplicationController < ApplicationController
+  layout 'admin'
   before_filter :redirect_to_root_path
   
   def redirect_to_root_path
